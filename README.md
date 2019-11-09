@@ -1,16 +1,16 @@
 # octp-website
 
-== Quick Start ==
+# Quick Start
 NPM Install required node modules 
 
 In the .env configure the port and admin password before starting the application
 
 Navigate to localhost:PORT
 
-== Changes ==
+# Changes
 Grab a todo. Create a branch. Submit a pull request.
 
-=== TODO ===
+## TODO
 - Fix site text and icon for google chrome on mobile (for making shortcuts and social share)
 - Add new "news article" as front page subtext
 - Have comic news be added back
@@ -26,7 +26,7 @@ Grab a todo. Create a branch. Submit a pull request.
   - FINISH dataset for all events
     - ADD Charts
   
-Bonus
+### Bonus
 - Integrate mailchimp
 - Have an auto "severity" status based on station status not manual input
   - 4 warning sites and 2 red = Red Alert

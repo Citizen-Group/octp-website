@@ -261,7 +261,7 @@ function expireEvent(){
           "Confederation": {
               "status": "success",
               "tooltipText": "Last incident was " + new Date(file.currentStatus.stopStatus.l1.Blair.lastupdated ),
-              "lastupdated": file.currentStatus.stopStatus.l2.Confederation.lastupdatedwTime
+              "lastupdated": file.currentStatus.stopStatus.l2.Confederation.lastupdated
           },
           "Greenboro": {
               "status": "success",

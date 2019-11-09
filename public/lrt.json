@@ -82,7 +82,8 @@
         },
         "Confederation": {
           "status": "success",
-          "tooltipText": "Last incident was Tue Nov 05 2019 19:34:19 GMT-0500 (GMT-05:00)"
+          "tooltipText": "Last incident was Tue Nov 05 2019 19:34:19 GMT-0500 (GMT-05:00)",
+          "lastupdated": 1573002142367
         },
         "Greenboro": {
           "status": "success",
