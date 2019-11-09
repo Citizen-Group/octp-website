@@ -1,0 +1,799 @@
+extends layout
+
+block content
+  body(id="page-top")
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Ottawa LRT Status</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><span id="hoursAgo">00</span>h since last incident</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Report">Report</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Latest">Latest</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Statistics">Statistics</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead -->
+    if currentStatus.overallStatus == "success"
+      <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+
+          <!-- Masthead Avatar Image -->
+          <img class="masthead-avatar mb-5" src="img/hotmessexpress_success.png" alt="The Hot Mess Express">
+
+          <!-- Masthead Heading -->
+          <h1 class="masthead-heading text-uppercase mb-0">The LRT is running*</h1>
+          small(class="masthead-subheading mb-0") We report fast. The Mayor reports furious.
+
+    else if currentStatus.overallStatus == "danger"
+      <header class="masthead bg-danger text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+
+          <!-- Masthead Avatar Image -->
+          <img class="masthead-avatar mb-5" src="img/hotmessexpress_danger.png" alt="The Hot Mess Express">
+
+          <!-- Masthead Heading -->
+          <h1 class="masthead-heading text-uppercase mb-0">The LRT is a hot mess right now</h1>
+          small(class="masthead-subheading mb-0") #{events[0].subText}
+
+    else if currentStatus.overallStatus == "warning"
+      <header class="masthead bg-warning text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+
+          <!-- Masthead Avatar Image -->
+          <img class="masthead-avatar mb-5" src="img/hotmessexpress_warning.png" alt="The Hot Mess Express">
+
+          <!-- Masthead Heading -->
+          <h1 class="masthead-heading text-uppercase mb-0">The LRT is struggling with life right now</h1>
+          small(class="masthead-subheading mb-0") #{events[0].subText}
+
+    else
+      <header class="masthead bg-secondary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+          <!-- Masthead Avatar Image -->
+          <img class="masthead-avatar mb-5" src="img/hotmessexpress_info.png" alt="The Hot Mess Express">
+
+          <!-- Masthead Heading -->
+          <h1 class="masthead-heading text-uppercase mb-0">The LRT is running fine???</h1>
+          small(class="masthead-subheading mb-0") We are having trouble figuring out whats going right now. <br> Check back shortly.
+
+    <!-- Icon Divider -->
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon">
+        <i class="fas fa-train"></i>
+      </div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <!-- Masthead Subheading -->
+    p(class="masthead-subheading mb-0") #{events[0].subtext}
+    <p class="masthead-subheading mb-0">Last incident was <span id="example" data-toggle="tooltip" data-placement="top"> <b class=text-uppercase><span id="hoursAgoMain">?? </span>h</b> ago</span> at <b class=text-uppercase><span id="lastLocation">Unknown location</span></b> due to <b class=text-uppercase><span id="lastReason">Unspecified Reason</span></b></p>
+
+    <!-- Scroll to Events -->
+    <a class="btn btn-outline-light btn-social mx-1 mt-3 js-scroll-trigger" href="#activeEvents">
+      <i class="fa fa-chevron-down"></i>
+    </a>
+
+      </div>
+    </header>
+
+        <!-- Copyright Section -->
+    <section class="copyright py-4 text-center text-white">
+      <div class="container">
+        small.text-uppercase Quick station status
+        p.mb-3 
+        a.btn.btn-sm.btn-outline-success TP
+        a.btn.btn-sm.btn-outline-success BV
+        a.btn.btn-sm.btn-outline-success PIM
+        a.btn.btn-sm.btn-outline-success LYN
+        a.btn.btn-sm.btn-outline-success PAR
+        a.btn.btn-sm.btn-outline-success RDU
+        a.btn.btn-sm.btn-outline-success UOT
+        a.btn.btn-sm.btn-outline-success LEE
+        a.btn.btn-sm.btn-outline-success HRD
+        a.btn.btn-sm.btn-outline-success TMB
+        a.btn.btn-sm.btn-outline-success STL
+        a.btn.btn-sm.btn-outline-success CYR
+        a.btn.btn-sm.btn-outline-success BLA
+        br
+        button.small.btn.btn-link(href="#reports") See Details
+      </div>
+    </section>
+
+    section(class="page-section" id="activeEvents")
+      .container
+        .row
+          .col
+            <!-- activeEvents Section Heading -->
+            h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-5 Current Incidents
+            <!-- Icon Divider -->
+            <div class="divider-custom divider-dark">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+
+            <div class="accordion" id="events">
+            
+              <div class="card">
+                <div class="card-header" style="padding-left: 0px" id="headingOne">
+                  <h2 class="mb-0">
+                    button(class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne")
+                      span(class="btn btn-outline-primary btn-social mx-1")
+                        span.small 5m
+                      span(style="margin-left: 10px" class="masthead-heading text-uppercase text-secondary") Delay due to door held
+                      button.btn.btn-primary.float-right Pimisi
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#events">
+                  <div class="card-body">
+                    p 2:00 am: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                    p 2:03 am: terry richardson ad squid.
+                    p 2:15 am: wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" style="padding-left: 0px" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      a(class="btn btn-outline-primary btn-social mx-1")
+                        span.small 15m
+                      span(style="margin-left: 10px" class="masthead-heading text-uppercase text-secondary") Delay due to stopped train
+                      button.btn.btn-primary.float-right Rideau
+                      button.btn.btn-primary.float-right.mr-2 Parliament
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#events">
+                  <div class="card-body">
+                    p 2:00 am: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                    p 2:03 am: terry richardson ad squid.
+                    p 2:15 am: wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" style="padding-left: 0px" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      a(class="btn btn-outline-warning btn-social mx-1")
+                        span.small 43m
+                      span(style="margin-left: 10px" class="masthead-heading text-uppercase text-secondary") Delay due to door immobilized train
+                      button.btn.btn-primary.float-right Pimisi
+
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#events">
+                  <div class="card-body">
+                    p 2:00 am: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                    p 2:03 am: terry richardson ad squid.
+                    p 2:15 am: wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                  </div>
+                </div>
+              </div>
+            </div>
+        .row
+          .col
+            h3.text-center.mt-5 Completed Incidents
+
+    <!-- Report Section -->
+    <section class="page-section" id="Report">
+      .container
+        .row
+          .col-lg-6
+            <!-- Contact Section Heading -->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Report an incident</h2>
+
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-exclamation"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+
+            <!-- Report-->
+            <div class="row">
+              <div class="col mb-3">
+                <p class="text-center lead">Send us a status report</p>
+              </div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-lg-3 ml-auto">
+                <div class="text-center mt-2">
+                  <a class="btn btn-outline-dark" href="https://www.reddit.com/message/compose/?to=JKOttawa&subject=Reporting%20LRT%20Status&message=Location:%0ATime:%0AReason:%0A">
+                    <i class="fab fa-reddit-alien"></i> Reddit
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-3 mr-auto">
+                <div class="text-center mt-2">
+                  <a class="btn btn-outline-dark" href="mailto:control.ottawa@gmail.com?subject=Reporting LRT Status&body=Time:%0ALocation:%0AReason:%0A%0A">
+                    <i class="far fa-envelope"></i> Email
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+          .col-lg-5
+            <!-- Email Alerts -->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Sign up for email alerts</h2>
+
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+
+            <!-- Email -->
+            <div class="row">
+              <div class="col mb-3">
+                <div class="text-center mt-2">
+                  <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#emailMode">
+                    button(class="btn btn-outline-dark") Signup
+                  </div>
+                </div>
+              </div>
+            </div>   
+
+    </section>
+    
+    <!-- Latest Section -->
+    <section class="page-section bg-primary text-white mb-0" id="Latest">
+      <div class="container">
+
+        <!-- About Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-white">Latest Station Status</h2>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- About Section Content -->
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- Current Status per station -->
+            <!-- Line 1 -->
+            p.page-section-heading.text-center.text-uppercase.text-white Line 1                    
+            each val, index in currentStatus.stopStatus.l1
+              .mb-0.text-center
+                .form-group("titleBlock")
+                  p.lead 
+                    <span id="example" data-toggle="tooltip" data-placement="right" data-title="#{val.tooltipText}">
+                    if val.status == "danger"
+                      <button class="btn btn-danger"><i class="fas fa-fire"></i> #{index}</button>
+                    else if val.status == "warning"
+                      <button class="btn btn-warning"><i class="fas fa-exclamation"></i> #{index}</button>
+                    else if val.status == "info"
+                      <button class="btn btn-info"><i class="fas fa-exclamation-circle"></i> #{index}</button>
+                    else if val.status == "success"
+                      <button class="btn btn-success"> #{index}</button>
+                    </span>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- Line 2 -->
+            p.page-section-heading.text-center.text-uppercase.text-white Line 2                    
+            each val, index in currentStatus.stopStatus.l2
+              .mb-0.text-center
+                .form-group("titleBlock")
+                  p.lead 
+                    <span id="example" data-toggle="tooltip" data-placement="right" data-title="#{val.tooltipText}">
+                    if val.status == "danger"
+                      <button class="btn btn-danger"><i class="fas fa-fire"></i> #{index}</button>
+                    else if val.status == "warning"
+                      <button class="btn btn-warning"><i class="fas fa-exclamation"></i> #{index}</button>
+                    else if val.status == "info"
+                      <button class="btn btn-info"><i class="fas fa-exclamation-circle"></i> #{index}</button>
+                    else if val.status == "success"
+                      <button class="btn btn-success"> #{index}</button>
+                    </span>
+          </div>
+        </div>
+        <!-- -->
+        <div class="text-center mt-4">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="page-section portfolio" id="Statistics">
+      <div class="container">
+
+        <!-- Stats Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Statistics</h2>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-train"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- Stats Grid Items -->
+        <div class="page-section-heading">
+          h3.text-center A work in progress 
+            small.text-primary (just like the LRT)
+        .row.mt-5
+          <!-- Portfolio Item 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#recordModal">
+              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white">
+                    p Records
+                </div>
+              </div>
+              p DAYS WITHOUT INCIDENT STREAK
+              p -25 DAYS
+       
+            </div>
+          </div>
+
+           <!-- Portfolio Item 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#chartModal">
+              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white">
+                    p Charts
+                </div>
+              </div>
+              <canvas id="myChart" width="400" height="400"></canvas>
+              script.
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels: ['TP', 'BV', 'PIM', 'LYN', 'PAR', 'RDU', 'uOT', 'LEE', 'HUR', 'TMB', 'STL', 'CYR', 'BLR'],
+                      datasets: [{
+                          label: '# of Incidents',
+                          data: [3, 1, 4, 1, 1, 1, 3, 2, 1, 0, 2, 0, 6],
+                          backgroundColor: [
+                              'rgba(255, 99, 132, 0.2)',
+                              'rgba(54, 162, 235, 0.2)',
+                              'rgba(255, 206, 86, 0.2)',
+                              'rgba(75, 192, 192, 0.2)',
+                              'rgba(153, 102, 255, 0.2)',
+                              'rgba(255, 159, 64, 0.2)',
+                              'rgba(255, 99, 132, 0.2)',
+                              'rgba(54, 162, 235, 0.2)',
+                              'rgba(255, 206, 86, 0.2)',
+                              'rgba(75, 192, 192, 0.2)',
+                              'rgba(153, 102, 255, 0.2)',
+                              'rgba(255, 159, 64, 0.2)',
+                              'rgba(255, 99, 132, 0.2)'
+                          ],
+                          borderColor: [
+                              'rgba(255, 99, 132, 1)',
+                              'rgba(54, 162, 235, 1)',
+                              'rgba(255, 206, 86, 1)',
+                              'rgba(75, 192, 192, 1)',
+                              'rgba(153, 102, 255, 1)',
+                              'rgba(255, 159, 64, 1)',
+                              'rgba(255, 99, 132, 1)',
+                              'rgba(54, 162, 235, 1)',
+                              'rgba(255, 206, 86, 1)',
+                              'rgba(75, 192, 192, 1)',
+                              'rgba(153, 102, 255, 1)',
+                              'rgba(255, 159, 64, 1)',
+                              'rgba(255, 99, 132, 1)'
+                          ],
+                          borderWidth: 1
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          yAxes: [{
+                              ticks: {
+                                  beginAtZero: true
+                              }
+                          }]
+                      }
+                  }
+                });
+            </div>
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+
+          <!-- Footer Location -->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Contact us</h4>
+            <p class="lead mb-0">control.ottawa<i class="fas fa-at"></i>gmail.com</p>
+          </div>
+
+          <!-- Footer Social Icons -->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Around the Web</h4>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/groups/CitizenIG/">
+              <i class="fab fa-fw fa-facebook-f"></i>
+            </a>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://www.reddit.com/r/ottawa/">
+              <i class="fab fa-reddit-alien"></i>
+            </a>
+          </div>
+
+          <!-- Footer About Text -->
+          <div class="col-lg-4">
+            <h4 class="text-uppercase mb-4">About Occasional Transport.ca</h4>
+            <p class="lead mb-0">is an informative and satirical website built to communicate the status of the Ottawa Light Rail Transit lines.</p>
+            <p class="lead mt-3">Why? Because someone has to.</p> 
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <div class="portfolio-modal modal fade" id="emailMode" tabindex="-1" role="dialog" aria-labelledby="emailModeLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Email Signup Form</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Modal - Text -->
+                  <p class="mb-2 lead">Please select <b>LRT Updates</b> to be added to the alerts mailing list. You may select other interests to receive notifications when they become active.</p>
+                          
+                  <div class="row">
+                    <!-- Begin Mailchimp Signup Form -->
+                    <div id="mc_embed_signup">
+                      <form action="https://facebook.us16.list-manage.com/subscribe/post?u=42e55b91ada0909c29255b1a5&amp;id=87b2b0a7b6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                          
+                          <h2>Subscribe to Email Alerts</h2>
+                          
+                          <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                          
+                          <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                          </div>
+
+                        <div class="mc-field-group">
+                          <label for="mce-FNAME">First Name  <span class="asterisk">*</span></label>
+                          <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+                        </div>
+
+                        <div class="mc-field-group">
+                          <label for="mce-LNAME">Last Name  <span class="asterisk">*</span></label>
+                          <input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+                        </div>
+
+                        <div class="mc-field-group input-group">
+                          <strong>Gender </strong>
+                          <ul>
+                            <li><input type="radio" value="Male" name="MMERGE4" id="mce-MMERGE4-0"><label for="mce-MMERGE4-0">Male</label></li>
+                            <li><input type="radio" value="Female" name="MMERGE4" id="mce-MMERGE4-1"><label for="mce-MMERGE4-1">Female</label></li>
+                            <li><input type="radio" value="Other" name="MMERGE4" id="mce-MMERGE4-2"><label for="mce-MMERGE4-2">Other</label></li>
+                            <li><input type="radio" value="Prefer not to say" name="MMERGE4" id="mce-MMERGE4-3"><label for="mce-MMERGE4-3">Prefer not to say</label></li>
+                          </ul>
+                        </div>
+
+                        <div class="mc-field-group size1of2">
+                          <label for="mce-BIRTHDAY-month">Birthday  <span class="asterisk">*</span></label>
+                          <div class="datefield">
+                            <span class="subfield monthfield"><input class="birthday required" type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> / 
+                            <span class="subfield dayfield"><input class="birthday required" type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span> 
+                            <span class="small-meta nowrap">( mm / dd )</span>
+                          </div>
+                        </div>
+                        
+                        <div class="mc-address-group">
+                          <div class="mc-field-group">
+                            <label for="mce-MMERGE6-addr1">Home Address  <span class="asterisk">*</span> </label>
+                            <input type="text" value="" maxlength="70" name="MMERGE6[addr1]" id="mce-MMERGE6-addr1" class="required">
+                          </div>
+                          <div class="mc-field-group">
+                            <label for="mce-MMERGE6-addr2">Address Line 2</label>
+                            <input type="text" value="" maxlength="70" name="MMERGE6[addr2]" id="mce-MMERGE6-addr2">		
+                          </div>
+                          <div class="mc-field-group size1of2">
+                            <label for="mce-MMERGE6-city">City</label>
+                            <input type="text" value="" maxlength="40" name="MMERGE6[city]" id="mce-MMERGE6-city" class="required">
+                          </div>
+                          <div class="mc-field-group size1of2">
+                            <label for="mce-MMERGE6-state">State/Province/Region</label>
+                            <input type="text" value="" maxlength="20" name="MMERGE6[state]" id="mce-MMERGE6-state" class="required">
+                          </div>
+                          <div class="mc-field-group size1of2">
+                            <label for="mce-MMERGE6-zip">Postal / Zip Code</label>
+                            <input type="text" value="" maxlength="10" name="MMERGE6[zip]" id="mce-MMERGE6-zip" class="required">
+                          </div>
+                          <div class="mc-field-group size1of2">
+                            <label for="mce-MMERGE6-country">Country</label>
+                            <select name="MMERGE6[country]" id="mce-MMERGE6-country" class="required"><option value="164">USA</option><option value="286">Aaland Islands</option><option value="274">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="178">American Samoa</option><option value="4">Andorra</option><option value="5">Angola</option><option value="176">Anguilla</option><option value="175">Antigua And Barbuda</option><option value="6">Argentina</option><option value="7">Armenia</option><option value="179">Aruba</option><option value="8">Australia</option><option value="9">Austria</option><option value="10">Azerbaijan</option><option value="11">Bahamas</option><option value="12">Bahrain</option><option value="13">Bangladesh</option><option value="14">Barbados</option><option value="15">Belarus</option><option value="16">Belgium</option><option value="17">Belize</option><option value="18">Benin</option><option value="19">Bermuda</option><option value="20">Bhutan</option><option value="21">Bolivia</option><option value="325">Bonaire, Saint Eustatius and Saba</option><option value="22">Bosnia and Herzegovina</option><option value="23">Botswana</option><option value="181">Bouvet Island</option><option value="24">Brazil</option><option value="180">Brunei Darussalam</option><option value="25">Bulgaria</option><option value="26">Burkina Faso</option><option value="27">Burundi</option><option value="28">Cambodia</option><option value="29">Cameroon</option><option value="30" selected>Canada</option><option value="31">Cape Verde</option><option value="32">Cayman Islands</option><option value="33">Central African Republic</option><option value="34">Chad</option><option value="35">Chile</option><option value="36">China</option><option value="185">Christmas Island</option><option value="37">Colombia</option><option value="204">Comoros</option><option value="38">Congo</option><option value="183">Cook Islands</option><option value="268">Costa Rica</option><option value="275">Cote D'Ivoire</option><option value="40">Croatia</option><option value="276">Cuba</option><option value="298">Curacao</option><option value="41">Cyprus</option><option value="42">Czech Republic</option><option value="318">Democratic Republic of the Congo</option><option value="43">Denmark</option><option value="44">Djibouti</option><option value="289">Dominica</option><option value="187">Dominican Republic</option><option value="45">Ecuador</option><option value="46">Egypt</option><option value="47">El Salvador</option><option value="48">Equatorial Guinea</option><option value="49">Eritrea</option><option value="50">Estonia</option><option value="51">Ethiopia</option><option value="189">Falkland Islands</option><option value="191">Faroe Islands</option><option value="52">Fiji</option><option value="53">Finland</option><option value="54">France</option><option value="193">French Guiana</option><option value="277">French Polynesia</option><option value="56">Gabon</option><option value="57">Gambia</option><option value="58">Georgia</option><option value="59">Germany</option><option value="60">Ghana</option><option value="194">Gibraltar</option><option value="61">Greece</option><option value="195">Greenland</option><option value="192">Grenada</option><option value="196">Guadeloupe</option><option value="62">Guam</option><option value="198">Guatemala</option><option value="270">Guernsey</option><option value="63">Guinea</option><option value="65">Guyana</option><option value="200">Haiti</option><option value="66">Honduras</option><option value="67">Hong Kong</option><option value="68">Hungary</option><option value="69">Iceland</option><option value="70">India</option><option value="71">Indonesia</option><option value="278">Iran</option><option value="279">Iraq</option><option value="74">Ireland</option><option value="323">Isle of Man</option><option value="75">Israel</option><option value="76">Italy</option><option value="202">Jamaica</option><option value="78">Japan</option><option value="288">Jersey  (Channel Islands)</option><option value="79">Jordan</option><option value="80">Kazakhstan</option><option value="81">Kenya</option><option value="203">Kiribati</option><option value="82">Kuwait</option><option value="83">Kyrgyzstan</option><option value="84">Lao People's Democratic Republic</option><option value="85">Latvia</option><option value="86">Lebanon</option><option value="87">Lesotho</option><option value="88">Liberia</option><option value="281">Libya</option><option value="90">Liechtenstein</option><option value="91">Lithuania</option><option value="92">Luxembourg</option><option value="208">Macau</option><option value="93">Macedonia</option><option value="94">Madagascar</option><option value="95">Malawi</option><option value="96">Malaysia</option><option value="97">Maldives</option><option value="98">Mali</option><option value="99">Malta</option><option value="207">Marshall Islands</option><option value="210">Martinique</option><option value="100">Mauritania</option><option value="212">Mauritius</option><option value="241">Mayotte</option><option value="101">Mexico</option><option value="102">Moldova, Republic of</option><option value="103">Monaco</option><option value="104">Mongolia</option><option value="290">Montenegro</option><option value="294">Montserrat</option><option value="105">Morocco</option><option value="106">Mozambique</option><option value="242">Myanmar</option><option value="107">Namibia</option><option value="108">Nepal</option><option value="109">Netherlands</option><option value="110">Netherlands Antilles</option><option value="213">New Caledonia</option><option value="111">New Zealand</option><option value="112">Nicaragua</option><option value="113">Niger</option><option value="114">Nigeria</option><option value="217">Niue</option><option value="214">Norfolk Island</option><option value="272">North Korea</option><option value="116">Norway</option><option value="117">Oman</option><option value="118">Pakistan</option><option value="222">Palau</option><option value="282">Palestine</option><option value="119">Panama</option><option value="219">Papua New Guinea</option><option value="120">Paraguay</option><option value="121">Peru</option><option value="122">Philippines</option><option value="221">Pitcairn</option><option value="123">Poland</option><option value="124">Portugal</option><option value="126">Qatar</option><option value="315">Republic of Kosovo</option><option value="127">Reunion</option><option value="128">Romania</option><option value="129">Russia</option><option value="130">Rwanda</option><option value="205">Saint Kitts and Nevis</option><option value="206">Saint Lucia</option><option value="324">Saint Martin</option><option value="237">Saint Vincent and the Grenadines</option><option value="132">Samoa (Independent)</option><option value="227">San Marino</option><option value="255">Sao Tome and Principe</option><option value="133">Saudi Arabia</option><option value="134">Senegal</option><option value="326">Serbia</option><option value="135">Seychelles</option><option value="136">Sierra Leone</option><option value="137">Singapore</option><option value="302">Sint Maarten</option><option value="138">Slovakia</option><option value="139">Slovenia</option><option value="223">Solomon Islands</option><option value="140">Somalia</option><option value="141">South Africa</option><option value="257">South Georgia and the South Sandwich Islands</option><option value="142">South Korea</option><option value="311">South Sudan</option><option value="143">Spain</option><option value="144">Sri Lanka</option><option value="293">Sudan</option><option value="146">Suriname</option><option value="225">Svalbard and Jan Mayen Islands</option><option value="147">Swaziland</option><option value="148">Sweden</option><option value="149">Switzerland</option><option value="285">Syria</option><option value="152">Taiwan</option><option value="260">Tajikistan</option><option value="153">Tanzania</option><option value="154">Thailand</option><option value="233">Timor-Leste</option><option value="155">Togo</option><option value="232">Tonga</option><option value="234">Trinidad and Tobago</option><option value="156">Tunisia</option><option value="157">Turkey</option><option value="158">Turkmenistan</option><option value="287">Turks &amp; Caicos Islands</option><option value="159">Uganda</option><option value="161">Ukraine</option><option value="162">United Arab Emirates</option><option value="262">United Kingdom</option><option value="163">Uruguay</option><option value="165">Uzbekistan</option><option value="239">Vanuatu</option><option value="166">Vatican City State (Holy See)</option><option value="167">Venezuela</option><option value="168">Vietnam</option><option value="169">Virgin Islands (British)</option><option value="238">Virgin Islands (U.S.)</option><option value="188">Western Sahara</option><option value="170">Yemen</option><option value="173">Zambia</option><option value="174">Zimbabwe</option></select>
+                          </div>
+                        </div>
+
+                        <div class="mc-address-group">
+                          <div class="mc-field-group">
+                            <label for="mce-MMERGE7-addr1">Work Address (Optional) </label>
+                            <input type="text" value="" maxlength="70" name="MMERGE7[addr1]" id="mce-MMERGE7-addr1" class="">
+                          </div>
+                          <div class="mc-field-group">
+                            <label for="mce-MMERGE7-addr2">Address Line 2</label>
+                            <input type="text" value="" maxlength="70" name="MMERGE7[addr2]" id="mce-MMERGE7-addr2">		
+                          </div>
+                          <div class="mc-field-group size1of2">
+                            <label for="mce-MMERGE7-city">City</label>
+                            <input type="text" value="" maxlength="40" name="MMERGE7[city]" id="mce-MMERGE7-city" class="">
+                          </div>
+                          <div class="mc-field-group size1of2">
+                            <label for="mce-MMERGE7-state">State/Province/Region</label>
+                            <input type="text" value="" maxlength="20" name="MMERGE7[state]" id="mce-MMERGE7-state" class="">
+                          </div>
+                          <div class="mc-field-group size1of2">
+                            <label for="mce-MMERGE7-zip">Postal / Zip Code</label>
+                            <input type="text" value="" maxlength="10" name="MMERGE7[zip]" id="mce-MMERGE7-zip" class="">
+                          </div>
+                          <div class="mc-field-group size1of2">
+                            <label for="mce-MMERGE7-country">Country</label>
+                            <select name="MMERGE7[country]" id="mce-MMERGE7-country" class=""><option value="164">USA</option><option value="286">Aaland Islands</option><option value="274">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="178">American Samoa</option><option value="4">Andorra</option><option value="5">Angola</option><option value="176">Anguilla</option><option value="175">Antigua And Barbuda</option><option value="6">Argentina</option><option value="7">Armenia</option><option value="179">Aruba</option><option value="8">Australia</option><option value="9">Austria</option><option value="10">Azerbaijan</option><option value="11">Bahamas</option><option value="12">Bahrain</option><option value="13">Bangladesh</option><option value="14">Barbados</option><option value="15">Belarus</option><option value="16">Belgium</option><option value="17">Belize</option><option value="18">Benin</option><option value="19">Bermuda</option><option value="20">Bhutan</option><option value="21">Bolivia</option><option value="325">Bonaire, Saint Eustatius and Saba</option><option value="22">Bosnia and Herzegovina</option><option value="23">Botswana</option><option value="181">Bouvet Island</option><option value="24">Brazil</option><option value="180">Brunei Darussalam</option><option value="25">Bulgaria</option><option value="26">Burkina Faso</option><option value="27">Burundi</option><option value="28">Cambodia</option><option value="29">Cameroon</option><option value="30" selected>Canada</option><option value="31">Cape Verde</option><option value="32">Cayman Islands</option><option value="33">Central African Republic</option><option value="34">Chad</option><option value="35">Chile</option><option value="36">China</option><option value="185">Christmas Island</option><option value="37">Colombia</option><option value="204">Comoros</option><option value="38">Congo</option><option value="183">Cook Islands</option><option value="268">Costa Rica</option><option value="275">Cote D'Ivoire</option><option value="40">Croatia</option><option value="276">Cuba</option><option value="298">Curacao</option><option value="41">Cyprus</option><option value="42">Czech Republic</option><option value="318">Democratic Republic of the Congo</option><option value="43">Denmark</option><option value="44">Djibouti</option><option value="289">Dominica</option><option value="187">Dominican Republic</option><option value="45">Ecuador</option><option value="46">Egypt</option><option value="47">El Salvador</option><option value="48">Equatorial Guinea</option><option value="49">Eritrea</option><option value="50">Estonia</option><option value="51">Ethiopia</option><option value="189">Falkland Islands</option><option value="191">Faroe Islands</option><option value="52">Fiji</option><option value="53">Finland</option><option value="54">France</option><option value="193">French Guiana</option><option value="277">French Polynesia</option><option value="56">Gabon</option><option value="57">Gambia</option><option value="58">Georgia</option><option value="59">Germany</option><option value="60">Ghana</option><option value="194">Gibraltar</option><option value="61">Greece</option><option value="195">Greenland</option><option value="192">Grenada</option><option value="196">Guadeloupe</option><option value="62">Guam</option><option value="198">Guatemala</option><option value="270">Guernsey</option><option value="63">Guinea</option><option value="65">Guyana</option><option value="200">Haiti</option><option value="66">Honduras</option><option value="67">Hong Kong</option><option value="68">Hungary</option><option value="69">Iceland</option><option value="70">India</option><option value="71">Indonesia</option><option value="278">Iran</option><option value="279">Iraq</option><option value="74">Ireland</option><option value="323">Isle of Man</option><option value="75">Israel</option><option value="76">Italy</option><option value="202">Jamaica</option><option value="78">Japan</option><option value="288">Jersey  (Channel Islands)</option><option value="79">Jordan</option><option value="80">Kazakhstan</option><option value="81">Kenya</option><option value="203">Kiribati</option><option value="82">Kuwait</option><option value="83">Kyrgyzstan</option><option value="84">Lao People's Democratic Republic</option><option value="85">Latvia</option><option value="86">Lebanon</option><option value="87">Lesotho</option><option value="88">Liberia</option><option value="281">Libya</option><option value="90">Liechtenstein</option><option value="91">Lithuania</option><option value="92">Luxembourg</option><option value="208">Macau</option><option value="93">Macedonia</option><option value="94">Madagascar</option><option value="95">Malawi</option><option value="96">Malaysia</option><option value="97">Maldives</option><option value="98">Mali</option><option value="99">Malta</option><option value="207">Marshall Islands</option><option value="210">Martinique</option><option value="100">Mauritania</option><option value="212">Mauritius</option><option value="241">Mayotte</option><option value="101">Mexico</option><option value="102">Moldova, Republic of</option><option value="103">Monaco</option><option value="104">Mongolia</option><option value="290">Montenegro</option><option value="294">Montserrat</option><option value="105">Morocco</option><option value="106">Mozambique</option><option value="242">Myanmar</option><option value="107">Namibia</option><option value="108">Nepal</option><option value="109">Netherlands</option><option value="110">Netherlands Antilles</option><option value="213">New Caledonia</option><option value="111">New Zealand</option><option value="112">Nicaragua</option><option value="113">Niger</option><option value="114">Nigeria</option><option value="217">Niue</option><option value="214">Norfolk Island</option><option value="272">North Korea</option><option value="116">Norway</option><option value="117">Oman</option><option value="118">Pakistan</option><option value="222">Palau</option><option value="282">Palestine</option><option value="119">Panama</option><option value="219">Papua New Guinea</option><option value="120">Paraguay</option><option value="121">Peru</option><option value="122">Philippines</option><option value="221">Pitcairn</option><option value="123">Poland</option><option value="124">Portugal</option><option value="126">Qatar</option><option value="315">Republic of Kosovo</option><option value="127">Reunion</option><option value="128">Romania</option><option value="129">Russia</option><option value="130">Rwanda</option><option value="205">Saint Kitts and Nevis</option><option value="206">Saint Lucia</option><option value="324">Saint Martin</option><option value="237">Saint Vincent and the Grenadines</option><option value="132">Samoa (Independent)</option><option value="227">San Marino</option><option value="255">Sao Tome and Principe</option><option value="133">Saudi Arabia</option><option value="134">Senegal</option><option value="326">Serbia</option><option value="135">Seychelles</option><option value="136">Sierra Leone</option><option value="137">Singapore</option><option value="302">Sint Maarten</option><option value="138">Slovakia</option><option value="139">Slovenia</option><option value="223">Solomon Islands</option><option value="140">Somalia</option><option value="141">South Africa</option><option value="257">South Georgia and the South Sandwich Islands</option><option value="142">South Korea</option><option value="311">South Sudan</option><option value="143">Spain</option><option value="144">Sri Lanka</option><option value="293">Sudan</option><option value="146">Suriname</option><option value="225">Svalbard and Jan Mayen Islands</option><option value="147">Swaziland</option><option value="148">Sweden</option><option value="149">Switzerland</option><option value="285">Syria</option><option value="152">Taiwan</option><option value="260">Tajikistan</option><option value="153">Tanzania</option><option value="154">Thailand</option><option value="233">Timor-Leste</option><option value="155">Togo</option><option value="232">Tonga</option><option value="234">Trinidad and Tobago</option><option value="156">Tunisia</option><option value="157">Turkey</option><option value="158">Turkmenistan</option><option value="287">Turks &amp; Caicos Islands</option><option value="159">Uganda</option><option value="161">Ukraine</option><option value="162">United Arab Emirates</option><option value="262">United Kingdom</option><option value="163">Uruguay</option><option value="165">Uzbekistan</option><option value="239">Vanuatu</option><option value="166">Vatican City State (Holy See)</option><option value="167">Venezuela</option><option value="168">Vietnam</option><option value="169">Virgin Islands (British)</option><option value="238">Virgin Islands (U.S.)</option><option value="188">Western Sahara</option><option value="170">Yemen</option><option value="173">Zambia</option><option value="174">Zimbabwe</option></select>
+                          </div>
+                        </div>
+
+                        <div class="mc-field-group input-group">
+                          <strong>Interests </strong>
+                          <ul>
+                            <li><input type="checkbox" value="8" name="group[1321][8]" id="mce-group[1321]-1321-0"><label for="mce-group[1321]-1321-0">Major announcements</label></li>
+                            <li><input type="checkbox" value="16" name="group[1321][16]" id="mce-group[1321]-1321-1"><label for="mce-group[1321]-1321-1">Local news &amp; Minor announcements</label></li>
+                            <li><input type="checkbox" value="32" name="group[1321][32]" id="mce-group[1321]-1321-2"><label for="mce-group[1321]-1321-2">Events &amp; Invitations</label></li>
+                            <li><input type="checkbox" value="64" name="group[1321][64]" id="mce-group[1321]-1321-3"><label for="mce-group[1321]-1321-3">Product launches</label></li>
+                            <li><input type="checkbox" value="128" name="group[1321][128]" id="mce-group[1321]-1321-4"><label for="mce-group[1321]-1321-4">Neighborhood surveys</label></li>
+                            <li><input type="checkbox" value="1024" name="group[1321][1024]" id="mce-group[1321]-1321-5"><label for="mce-group[1321]-1321-5">Government and local politics</label></li>
+                            <li><input type="checkbox" value="2048" name="group[1321][2048]" id="mce-group[1321]-1321-6"><label for="mce-group[1321]-1321-6">Digital cities</label></li>
+                            <li><input type="checkbox" value="4096" name="group[1321][4096]" id="mce-group[1321]-1321-7"><label for="mce-group[1321]-1321-7">Security and public policing</label></li>
+                            <li><input type="checkbox" value="8192" name="group[1321][8192]" id="mce-group[1321]-1321-8"><label for="mce-group[1321]-1321-8">Tourism</label></li>
+                            <li><input type="checkbox" value="16384" name="group[1321][16384]" id="mce-group[1321]-1321-9"><label for="mce-group[1321]-1321-9">Emergencies</label></li>
+                            <li><input type="checkbox" value="32768" name="group[1321][32768]" id="mce-group[1321]-1321-10"><label for="mce-group[1321]-1321-10">Major Bus Updates</label></li>
+                            <li><input type="checkbox" value="131072" name="group[1321][131072]" id="mce-group[1321]-1321-11"><label for="mce-group[1321]-1321-11"><b>LRT Updates</b></label></li>
+                          </ul>
+                        </div>
+
+                        <div class="mc-field-group input-group">
+                          <strong>Engagement </strong>
+                          <ul>
+                            <li><input type="checkbox" value="1" name="group[1317][1]" id="mce-group[1317]-1317-0"><label for="mce-group[1317]-1317-0">I want to volunteer (Online)</label></li>
+                            <li><input type="checkbox" value="2" name="group[1317][2]" id="mce-group[1317]-1317-1"><label for="mce-group[1317]-1317-1">I want to volunteer (Real world)</label></li>
+                            <li><input type="checkbox" value="4" name="group[1317][4]" id="mce-group[1317]-1317-2"><label for="mce-group[1317]-1317-2">I am interested developing civic technology</label></li>
+                            <li><input type="checkbox" value="512" name="group[1317][512]" id="mce-group[1317]-1317-3"><label for="mce-group[1317]-1317-3">I want to beta test new applications</label></li>
+                            <li><input type="checkbox" value="65536" name="group[1317][65536]" id="mce-group[1317]-1317-4"><label for="mce-group[1317]-1317-4">I got a lot of free time ❤</label></li>
+                          </ul>
+                        </div>
+
+                        <div class="mc-field-group input-group">
+                          <strong>Email Format </strong>
+                          <ul>
+                            <li><input type="radio" value="html" name="EMAILTYPE" id="mce-EMAILTYPE-0"><label for="mce-EMAILTYPE-0">html</label></li>
+                            <li><input type="radio" value="text" name="EMAILTYPE" id="mce-EMAILTYPE-1"><label for="mce-EMAILTYPE-1">text</label></li>
+                          </ul>
+                        </div>
+                      
+                        <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_42e55b91ada0909c29255b1a5_87b2b0a7b6" tabindex="-1" value=""></div>
+                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info"></div>
+
+                        </div>
+                      </form>
+                    </div>
+                    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='MMERGE4';ftypes[4]='radio';fnames[3]='BIRTHDAY';ftypes[3]='birthday';fnames[6]='MMERGE6';ftypes[6]='address';fnames[7]='MMERGE7';ftypes[7]='address';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                    <!--End mc_embed_signup-->
+                  </div> <!-- containing row -->                 
+
+                  <button class="btn btn-primary" href="#" data-dismiss="modal">
+                    <i class="fas fa-times fa-fw"></i> Close Window
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat Modals -->
+    <!-- Stat Modal 1 - Records -->
+    <div class="portfolio-modal modal fade" id="recordModal" tabindex="-1" role="dialog" aria-labelledby="recordModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Records</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Image -->
+                  <!-- <i class="fas fa-star"></i> -->
+                  <!-- Modal - Text -->
+                  <p class="mb-5">Coming soon!</p>
+                  <button class="btn btn-primary" href="#" data-dismiss="modal">
+                    <i class="fas fa-times fa-fw"></i> Close Window
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Stat Modal 2 - Charts -->
+    <div class="portfolio-modal modal fade" id="chartModal" tabindex="-1" role="dialog" aria-labelledby="chartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Charts</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Image -->
+                  <!-- <i class="fas fa-star"></i> -->
+                  <!-- Modal - Text -->
+                  <p class="mb-5">Also Coming soon!</p>
+                  <button class="btn btn-primary" href="#" data-dismiss="modal">
+                    <i class="fas fa-times fa-fw"></i> Close Window
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Copyright Section -->
+    <section class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Made in Bayshore with ❤ by Citizen IG 2019</small>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+      <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+    
+    script.
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+      function x() {
+           
+        var minutes = 1000 * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+
+        // Params
+        var od = new Date(#{events[0].timestamp});
+
+        document.getElementById('lastLocation').innerHTML = "#{events[0].location.text}";
+        document.getElementById('lastReason').innerHTML = "#{events[0].reason.short}";
+      
+        var nd = new Date();
+        var nt = nd.getTime();
+
+        var dys = (nt-od) / days;
+        dys = dys.toFixed(2)
+        var hrs = (nt-od) / hours;
+        hrs = hrs.toFixed(1)
+
+        var optionsd = { weekday: 'long', month: 'long', day: 'numeric'};
+        var optionst = { timeStyle: 'short', hour12: true };
+
+        $('#example').tooltip({
+          title: (od.toLocaleDateString('en-CA', optionsd) + " at " + od.toLocaleTimeString(optionst))
+        })
+
+        document.getElementById('hoursAgo').innerHTML = hrs
+        document.getElementById('hoursAgoMain').innerHTML = hrs        
+
+      } x();
+

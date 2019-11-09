@@ -1,0 +1,177 @@
+{
+    "currentStatus": {
+        "overallStatus" : "danger",
+        "stopStatus": {
+            "Tunney's Pasture" : {
+                "status": "danger",
+                "tooltipText": "Total Chaos",
+                "lastupdated": 2222
+            },
+            "Bayview" : {
+                "status": "danger",
+                "tooltipText": "Total Chaos",
+                "lastupdated": 2222
+            },
+            "Pimisi" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Lyon" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Parliament" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Rideau" : {
+                "status": "info",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "uOttawa" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Lees" : {
+                "status": "success",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Hurdman" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Tremblay" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "St. Laurent" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Cyrville" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Blair" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Carling" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Carleton" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Confederation" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            },
+            "Greenboro" : {
+                "status": "warning",
+                "tooltipText": "backed up",
+                "lastupdated": 2222
+            }
+        }
+    },
+    "events" : [
+        {
+            "timestamp": 12345645,
+            "severity" : "danger",
+            "durLeaveUpMin" : 10,
+            "subtext": "Aside from some switch issues. The Line is fine. The Mayor is not.",
+            "location": {
+                "text": "Between Tunns and Lyon",
+                "affectedStops": {
+                    "Tunney's Pasture" : {
+                        "status": "danger",
+                        "tooltipText": "Total Chaos"
+                    },
+                    "Bayview" : {
+                        "status": "danger",
+                        "tooltipText": "Total Chaos"
+                    },
+                    "Pimisi" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Lyon" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Parliament" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Rideau" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "uOttawa" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Lees" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Hurdman" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Tremblay" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "St. Laurent" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Cyrville" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Blair" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Carling" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Carleton" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Confederation" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    },
+                    "Greenboro" : {
+                        "status": "warning",
+                        "tooltipText": "backed up"
+                    }
+                }
+            },
+            "reason": {
+                "short": "Switch Issue",
+                "long": "Switch failure between Tunney's Pasture and Lyon"
+            }
+        }
+    ]
+}

@@ -1,0 +1,259 @@
+extends layout
+
+block content
+  body(id="page-top")
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Ottawa LRT Status</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/"><span id="home">home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <form method="post" action="/admin">
+
+    <!-- Masthead -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container d-flex align-items-center flex-column">        
+
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0">Welcome admin</h1>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-train"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- Masthead Subheading -->
+        <p class="masthead-subheading mb-0">Fill out this form to change the status on the main page. <br> Thank you for helping make Ottawa great again!</p>
+
+      </div>
+    </header>
+
+    <!-- Report Section -->
+    <section class="page-section" id="Report">
+      .container
+        .row
+          .col-lg
+            <!-- Contact Section Heading -->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Overall Status</h2>
+
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-exclamation"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+            
+            <!-- Overall Page Status. Yellow Alert, Red Alert, Low Alert/Info, Green, Site Down -->
+            <div id="statusBlock" class="form-group text-center ">
+                <label class="lead" for="statusBlock">Current Status</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="overallStatus" id="overallStatus1" value="danger">
+                    <label class="form-check-label btn-danger" for="overallStatus1">Danger</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="overallStatus" id="overallStatus2" value="warning">
+                    <label class="form-check-label btn-warning" for="overallStatus2">Warning</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="overallStatus" id="overallStatus3" value="info">
+                    <label class="form-check-label btn-info" for="overallStatus3">Info</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="overallStatus" id="overallStatus4" value="success" checked>
+                    <label class="form-check-label btn-success" for="overallStatus4">Success</label>
+                </div>
+            </div>         
+            
+    </section>
+    
+    <!-- Latest Section -->
+    <section class="page-section bg-primary text-white mb-0" id="Latest">
+      <div class="container">
+
+        <!-- Event Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-white">New Event</h2>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- Event Section Content -->
+        <div class="row">
+          <div class="col-lg ml-auto">
+            .form-group.mb-5
+              .label(for="timestamp") When (milliseconds) 
+              input(type="text" class="form-control" id="timestamp" name="timestamp" value=new Date().getTime())
+              .label(for="subText") Sub heading frontpage text 
+              input(type="text" class="form-control" id="subText" name="subText")
+              .label(for="durLeaveUpMin") Duration to leave up on the main page (minutes) 
+              input(type="text" class="form-control" id="durLeaveUpMin" name="durLeaveUpMin" value="5")
+              .label(for="location") Affected Location (Human Readable) 
+              input(type="text" class="form-control" id="location" name="location")
+              .label(for="reason_short") Reason Short (Human Readable) 
+              input(type="text" class="form-control" id="reason_short" name="reason_short")
+              .label(for="reason_long") Reason Long (Human Readable)
+              input(type="text" class="form-control" id="reason_long" name="reason_long")
+        
+            <!-- Icon Divider -->
+            <div class="divider-custom divider-light">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+            
+            <h4 class="text-center text-uppercase text-white">Per Station Current Status</h2>
+            p.mb-5 Set the status of the stations effected by this event. They will reset to success after time duration expires. Statuses are stored for data mining and statistics.
+
+            <!-- Current Status per station -->
+                            <!-- Line 2 -->
+            p.page-section-heading.text-center.text-uppercase.text-white Line 1                   
+            each val, index in currentStatus.stopStatus.l1
+              .mb-5
+                .form-group("titleBlock")
+                  p.lead 
+                    if val.status == "danger"
+                      <button class="btn btn-danger"><i class="fas fa-fire"></i> #{index}</button>
+                    else if val.status == "warning"
+                      <button class="btn btn-warning"><i class="fas fa-exclamation"></i> #{index}</button>
+                    else if val.status == "info"
+                      <button class="btn btn-info"><i class="fas fa-exclamation-circle"></i> #{index}</button>
+                    else if val.status == "success"
+                      <button class="btn btn-success"> #{index}</button>
+
+                <!-- Set Status for station --> 
+                .form-group(id="stationStatusBlock")
+                  label(for="stationStatusBlock") Status  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="overallStatus_#{index}" id="overallStatus1_#{index}" value="danger">
+                      <label class="form-check-label btn-danger" for="overallStatus1_#{index}">Danger</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="overallStatus_#{index}" id="overallStatus2_#{index}" value="warning">
+                      <label class="form-check-label btn-warning" for="overallStatus2_#{index}"x>Warning</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="overallStatus_#{index}" id="overallStatus3_#{index}" value="info">
+                      <label class="form-check-label btn-info" for="overallStatus3_#{index}">Info</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="overallStatus_#{index}" id="overallStatus4_#{index}" value="success" checked>
+                      <label class="form-check-label btn-success" for="overallStatus4_#{index}">Success</label>
+                    </div>
+
+                  .form-group
+                    .label(for="tooltipText") Tooltip Text 
+                    <input type="text" class="form-control" id="tooltipText_#{index}" name="tooltipText_#{index}">
+
+            <!-- Line 2 -->
+            p.page-section-heading.text-center.text-uppercase.text-white Line 2
+
+            each val, index in currentStatus.stopStatus.l2
+              .mb-5
+                .form-group("titleBlock")
+                  p.lead 
+                    if val.status == "danger"
+                      <button class="btn btn-danger"><i class="fas fa-fire"></i> #{index}</button>
+                    else if val.status == "warning"
+                      <button class="btn btn-warning"><i class="fas fa-exclamation"></i> #{index}</button>
+                    else if val.status == "info"
+                      <button class="btn btn-info"><i class="fas fa-exclamation-circle"></i> #{index}</button>
+                    else if val.status == "success"
+                      <button class="btn btn-success"> #{index}</button>
+
+                <!-- Set Status for station --> 
+                .form-group(id="stationStatusBlock")
+                  label(for="stationStatusBlock") Status  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="overallStatus_#{index}" id="overallStatus1_#{index}" value="danger">
+                      <label class="form-check-label btn-danger" for="overallStatus1_#{index}">Danger</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="overallStatus_" + index id="overallStatus2_#{index}" value="warning">
+                      <label class="form-check-label btn-warning" for="overallStatus2_#{index}"x>Warning</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="overallStatus_#{index}" id="overallStatus3_#{index}" value="info">
+                      <label class="form-check-label btn-info" for="overallStatus3_#{index}">Info</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="overallStatus_#{index}" id="overallStatus4_#{index}" value="success" checked>
+                      <label class="form-check-label btn-success" for="overallStatus4_#{index}">Success</label>
+                    </div>
+
+                  .form-group
+                    .label(for="tooltipText") Tooltip Text 
+                    <input type="text" class="form-control" id="tooltipText_#{index}" name="tooltipText_#{index}">
+
+          </div><!-- /row -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+
+          <!-- Footer Location -->
+          <div class="col">
+            <h4 class="text-uppercase mb-5">Thank you!</h4>
+            <button id="submitbutton" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    </form>
+
+    <!-- Copyright Section -->
+    <section class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Made in Ottawa with ❤ by Citizen IG and YOU!</small>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+      <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>

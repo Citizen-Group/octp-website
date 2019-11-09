@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container
+    .row(style="margin-top:80px")
+      .col
+        h1= (error.status||("(╯°□°）╯︵ ┻━┻ ")) + " Oops..."
+        p= message
+    .row(style="margin-top:10x, font:0.25em")
+      .col
+        b Developer Stack Trace:
+        small 
+          pre #{error.stack}
