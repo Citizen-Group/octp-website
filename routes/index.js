@@ -17,6 +17,26 @@ router.all("*", function(req, res, next) {
   next();
 });
 
+
+function msAgo(timestampMs) {
+  var nd = new Date();
+  var nt = nd.getTime();
+  return nt-timestampMs;
+}
+
+function mAgo(timestampMs) {
+  var minutes = 1000 * 60;      
+  let minutesAgo = msAgo(timestampMs)/minutes;
+  return minutesAgo.toFixed(2)
+}
+
+function hAgo(timestampMs) {
+  var hours = (1000 * 60) * 60;      
+  let hoursAgo = msAgo(timestampMs)/hours;
+  return hoursAgo.toFixed(0)
+}
+
+
 router.get("/", function(req, res, next) {
   let siteData = {};
 
@@ -24,9 +44,106 @@ router.get("/", function(req, res, next) {
   fs.readFile("public/lrt.json", (err, data) => {
       if (err) throw err;
       siteData = JSON.parse(data);
-      res.render("index", siteData);      
-  });
- 
+      
+      // limit to 5
+      siteData.events = siteData.events.slice(0, 5);
+
+      // Convert the timestamps to "time ago"
+      for (var index in siteData.events) {
+        let tAgo = mAgo(siteData.events[index].timestamp);
+       
+        // If the minutes process too big. Set them to hours
+        if (tAgo > 60) {
+          tAgo = hAgo(siteData.events[index].timestamp);
+          tAgo = tAgo + "h"
+        } else {
+          tAgo = tAgo + "m"
+        }
+        siteData.events[index].timestamp = tAgo
+
+        let aStops = siteData.events[index].location.affectedStops.l1;
+
+        // Render out the status bars
+        let sBlock = ""
+
+        function shortname (name) {
+          let temp = ""
+
+          switch (name) {
+            case "Tunneys_Pasture":
+              temp = "TP"
+              break;
+
+            case "Bayview":
+              temp = "BV"
+              break;
+            
+            case "Pimisi":
+              temp = "PIM"
+              break;
+
+            case "Lyon":
+              temp = "LYN"
+              break;
+
+            case "Parliament":
+              temp = "PAR"
+              break;
+
+            case "Rideau":
+              temp = "RDU"
+              break;
+
+            case "uOttawa":
+              temp = "UOT"
+              break;
+
+            case "Lees":
+              temp = "LEE"
+              break;
+
+            case "Hurdman":
+              temp = "HRD"
+              break;
+
+            case "Tremblay":
+              temp = "TMB"
+              break;
+
+            case "St_Laurent":
+              temp = "STL"
+              break;
+
+            case "Cyrville":
+              temp = "CYR"
+              break;
+
+            case "Blair":
+              temp = "BLA"
+              break;
+          
+            default:
+              temp = "ERR"
+              break;
+          }
+
+          return temp;
+        }
+
+        for (var index2 in aStops) {
+          if (aStops[index2].status == "success") {
+            sBlock += '<a class="small alert-light mx-1">' + shortname(index2) + '</a> \n '          
+          } else {
+            sBlock += '<a class="small alert-' + aStops[index2].status + ' mx-1">' + shortname(index2) + '</a> \n ' 
+          }
+        }
+
+      siteData.events[index].statusBlock = sBlock;      
+    }
+
+    res.render("index", siteData);
+
+  }); 
 });
 
 router.get("/admin", function(req, res, next) {

@@ -152,19 +152,7 @@ block content
                         .col-10
                           .row(style="padding-left: 12px")
                             .col
-                              a.small.alert-light.mx-1 TP
-                              a.small.alert-warning.mx-1 BV
-                              a.small.alert-danger.mx-1 PIM
-                              a.small.alert-danger.mx-1 LYN
-                              a.small.alert-warning.mx-1 PAR
-                              a.small.alert-warning.mx-1 RDU
-                              a.small.alert-light.mx-1 UOT
-                              a.small.alert-light.mx-1 LEE
-                              a.small.alert-light.mx-1 HRD
-                              a.small.alert-light.mx-1 TMB
-                              a.small.alert-light.mx-1 STL
-                              a.small.alert-light.mx-1 CYR
-                              a.small.alert-light.mx-1 BLA
+                              span!= val.statusBlock
                           .row
                             button(class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse"+index1 aria-expanded="true" aria-controls="collapseOne" style="width:100%")
                               span(class="text-uppercase text-secondary") #{val.reason.short}
@@ -172,6 +160,9 @@ block content
                   .collapse(id="collapse"+index1 aria-labelledby="heading"+index1 data-parent="#events")
                     .card-body             
                       div.text-center 
+                        p.small Reported Location: #{val.location.text}
+                        h3.text-uppercase.text-secondary #{val.reason.long}
+                        p.text-uppercase.text-secondary #{val.subtext}
                         span.small Report an update:
 
                         <a class="btn btn-sm btn-light mx-1" href="https://www.reddit.com/message/compose/?to=JKOttawa&subject=Reporting%20LRT%20Status&message=Location:%0ATime:%0AReason:%0A">
@@ -293,12 +284,7 @@ block content
                         button.btn.btn-success(type="button" data-toggle="collapse" data-target="#stationDetails"+index) #{index}
 
                       .collapse(id="stationDetails"+index data-parent="#stations")
-                          p #{val.tooltipText}
-                          p 2m ago: Crowded station*
-                          p 23m ago: Train not moving*
-                          p 43m ago: Held Doors
-                          p
-                            i.small *ongoing as of last report
+                          p Station Status Dropdown coming soon
                           br
                           
                     
