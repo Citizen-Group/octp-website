@@ -12,14 +12,18 @@ block content
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><span id="hoursAgo">00</span>h since last incident</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"> <span id="hoursAgo">00</span>h since last incident</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Latest">Latest</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Report">Report</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Latest">Latest</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Station">Stations</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Statistics">Statistics</a>
@@ -113,16 +117,17 @@ block content
         a.btn.btn-sm.btn-outline-success CYR
         a.btn.btn-sm.btn-outline-success BLA
         br
-        button.small.btn.btn-link(href="#reports") See Details
+        button.small.btn.btn-link
+          a.js-scroll-trigger(href="#Station") Details
       </div>
     </section>
 
-    section(class="page-section" id="activeEvents")
+    section(class="page-section" id="Latest")
       .container
         .row
           .col
             <!-- activeEvents Section Heading -->
-            h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-5 Current Incidents
+            h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-5 Latest Status
             <!-- Icon Divider -->
             <div class="divider-custom divider-dark">
               <div class="divider-custom-line"></div>
@@ -133,71 +138,67 @@ block content
             </div>
 
             <div class="accordion" id="events">
+            p.page-section-heading.text-uppercase.text-white Test                   
+            each val, index in currentStatus.stopStatus.l2
+              .mb-0
+                <div class="card">
+                  .card-header(id="heading"+index)
+                    .mb-0
+                      .row                    
+                        if val.status == "danger"
+
+                        else if val.status == "warning"
+           
+                        else if val.status == "info"
+
+                        else if val.status == "success"
+                          .col-2
+                            span(class="text-black btn-social mt-1") 5m
+                          .col-10
+                            .row(style="padding-left: 12px")
+                              .col
+                                a.small.alert-light.mx-1 TP
+                                a.small.alert-warning.mx-1 BV
+                                a.small.alert-danger.mx-1 PIM
+                                a.small.alert-danger.mx-1 LYN
+                                a.small.alert-warning.mx-1 PAR
+                                a.small.alert-warning.mx-1 RDU
+                                a.small.alert-light.mx-1 UOT
+                                a.small.alert-light.mx-1 LEE
+                                a.small.alert-light.mx-1 HRD
+                                a.small.alert-light.mx-1 TMB
+                                a.small.alert-light.mx-1 STL
+                                a.small.alert-light.mx-1 CYR
+                                a.small.alert-light.mx-1 BLA
+                            .row
+                              button(class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse"+index aria-expanded="true" aria-controls="collapseOne" style="width:100%")
+                                span(class="text-uppercase text-secondary") Immobilized Train                                        
+
+                  .collapse(id="collapse"+index aria-labelledby="heading"+index data-parent="#events")
+                    .card-body               
+
+                      each val, index in currentStatus.stopStatus.l2
+                        p 2:00 am: This is test data
+                      
+                      div.text-center 
+                        span.small Report an update:
+
+                        <a class="btn btn-sm btn-light mx-1" href="https://www.reddit.com/message/compose/?to=JKOttawa&subject=Reporting%20LRT%20Status&message=Location:%0ATime:%0AReason:%0A">
+                          <i class="fab fa-reddit-alien"></i> Reddit
+                        </a>
+    
+                        <a class="btn btn-sm btn-light" href="mailto:control.ottawa@gmail.com?subject=Reporting LRT Status&body=Time:%0ALocation:%0AReason:%0A%0A">
+                          <i class="far fa-envelope"></i> Email
+                        </a>
+
+          
             
-              <div class="card">
-                <div class="card-header" style="padding-left: 0px" id="headingOne">
-                  <h2 class="mb-0">
-                    button(class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne")
-                      span(class="btn btn-outline-primary btn-social mx-1")
-                        span.small 5m
-                      span(style="margin-left: 10px" class="masthead-heading text-uppercase text-secondary") Delay due to door held
-                      button.btn.btn-primary.float-right Pimisi
-                  </h2>
                 </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#events">
-                  <div class="card-body">
-                    p 2:00 am: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                    p 2:03 am: terry richardson ad squid.
-                    p 2:15 am: wolf moon officia aute, non cupidatat skateboard dolor brunch. 
-                  </div>
-                </div>
-              </div>
 
-              <div class="card">
-                <div class="card-header" style="padding-left: 0px" id="headingTwo">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      a(class="btn btn-outline-primary btn-social mx-1")
-                        span.small 15m
-                      span(style="margin-left: 10px" class="masthead-heading text-uppercase text-secondary") Delay due to stopped train
-                      button.btn.btn-primary.float-right Rideau
-                      button.btn.btn-primary.float-right.mr-2 Parliament
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#events">
-                  <div class="card-body">
-                    p 2:00 am: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                    p 2:03 am: terry richardson ad squid.
-                    p 2:15 am: wolf moon officia aute, non cupidatat skateboard dolor brunch. 
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header" style="padding-left: 0px" id="headingThree">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      a(class="btn btn-outline-warning btn-social mx-1")
-                        span.small 43m
-                      span(style="margin-left: 10px" class="masthead-heading text-uppercase text-secondary") Delay due to door immobilized train
-                      button.btn.btn-primary.float-right Pimisi
-
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#events">
-                  <div class="card-body">
-                    p 2:00 am: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                    p 2:03 am: terry richardson ad squid.
-                    p 2:15 am: wolf moon officia aute, non cupidatat skateboard dolor brunch. 
-                  </div>
-                </div>
-              </div>
             </div>
         .row
           .col
-            h3.text-center.mt-5 Completed Incidents
+            h3.text-center.mt-5(id="complete") Completed Incidents
 
     <!-- Report Section -->
     <section class="page-section" id="Report">
@@ -266,11 +267,11 @@ block content
     </section>
     
     <!-- Latest Section -->
-    <section class="page-section bg-primary text-white mb-0" id="Latest">
+    <section class="page-section bg-primary text-white mb-0" id="Station">
       <div class="container">
 
         <!-- About Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-white">Latest Station Status</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-white">Latest Station Statuses</h2>
 
         <!-- Icon Divider -->
         <div class="divider-custom divider-light">
@@ -283,25 +284,28 @@ block content
 
         <!-- About Section Content -->
         <div class="row">
-          <div class="col-lg-6">
+          .col-lg-6
             <!-- Current Status per station -->
             <!-- Line 1 -->
-            p.page-section-heading.text-center.text-uppercase.text-white Line 1                    
-            each val, index in currentStatus.stopStatus.l1
-              .mb-0.text-center
-                .form-group("titleBlock")
-                  p.lead 
-                    <span id="example" data-toggle="tooltip" data-placement="right" data-title="#{val.tooltipText}">
-                    if val.status == "danger"
-                      <button class="btn btn-danger"><i class="fas fa-fire"></i> #{index}</button>
-                    else if val.status == "warning"
-                      <button class="btn btn-warning"><i class="fas fa-exclamation"></i> #{index}</button>
-                    else if val.status == "info"
-                      <button class="btn btn-info"><i class="fas fa-exclamation-circle"></i> #{index}</button>
-                    else if val.status == "success"
-                      <button class="btn btn-success"> #{index}</button>
-                    </span>
-          </div>
+            .accordion(id="stations")
+              p.page-section-heading.text-center.text-uppercase.text-white Line 1                    
+              each val, index in currentStatus.stopStatus.l1
+                .mb-0.text-center
+                  .form-group("titleBlock")
+                    p.lead
+                      if val.status == "danger"
+                        <button class="btn btn-danger"><i class="fas fa-fire"></i> #{index}</button>
+                      else if val.status == "warning"
+                        <button class="btn btn-warning"><i class="fas fa-exclamation"></i> #{index}</button>
+                      else if val.status == "info"
+                        <button class="btn btn-info"><i class="fas fa-exclamation-circle"></i> #{index}</button>
+                      else if val.status == "success"
+                        button.btn.btn-success(type="button" data-toggle="collapse" data-target="#stationDetails"+index) #{index}
+                      </span>
+
+                      .collapse(id="stationDetails"+index data-parent="#stations")
+                          p #{val.tooltipText}
+                    
 
           <div class="col-lg-6">
             <!-- Line 2 -->
@@ -381,7 +385,7 @@ block content
                       labels: ['TP', 'BV', 'PIM', 'LYN', 'PAR', 'RDU', 'uOT', 'LEE', 'HUR', 'TMB', 'STL', 'CYR', 'BLR'],
                       datasets: [{
                           label: '# of Incidents',
-                          data: [3, 1, 4, 1, 1, 1, 3, 2, 1, 0, 2, 0, 6],
+                          data: [3, 1, 4, 1, 2, 1, 3, 2, 1, 0, 2, 0, 6],
                           backgroundColor: [
                               'rgba(255, 99, 132, 0.2)',
                               'rgba(54, 162, 235, 0.2)',
@@ -458,8 +462,8 @@ block content
 
           <!-- Footer About Text -->
           <div class="col-lg-4">
-            <h4 class="text-uppercase mb-4">About Occasional Transport.ca</h4>
-            <p class="lead mb-0">is an informative and satirical website built to communicate the status of the Ottawa Light Rail Transit lines.</p>
+            <h4 class="text-uppercase mb-4">Occasional Transport.ca</h4>
+            <p class="lead mb-0">Is an informative and satirical website built to communicate the status of the Ottawa Light Rail Transit lines.</p>
             <p class="lead mt-3">Why? Because someone has to.</p> 
           </div>
 
@@ -731,7 +735,6 @@ block content
     </div>
 
 
-
     <!-- Copyright Section -->
     <section class="copyright py-4 text-center text-white">
       <div class="container">
@@ -765,14 +768,14 @@ block content
         $('[data-toggle="tooltip"]').tooltip()
       })
       function x() {
-           
+
         var minutes = 1000 * 60;
         var hours = minutes * 60;
         var days = hours * 24;
         var years = days * 365;
 
         // Params
-        var od = new Date(#{events[0].timestamp});
+        var od = new Date(#{currentStatus.lastFailureClockTime});
 
         document.getElementById('lastLocation').innerHTML = "#{events[0].location.text}";
         document.getElementById('lastReason').innerHTML = "#{events[0].reason.short}";

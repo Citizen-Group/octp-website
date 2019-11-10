@@ -1,5 +1,6 @@
 {
   "currentStatus": {
+    "lastFailureClockTime": 1573000459697,
     "overallStatus": "success",
     "stopStatus": {
       "l1": {
