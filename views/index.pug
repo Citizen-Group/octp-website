@@ -26,6 +26,9 @@ block content
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Station">Stations</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#News">News</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Statistics">Statistics</a>
             </li>
 
@@ -87,11 +90,10 @@ block content
     </div>
 
     <!-- Masthead Subheading -->
-    p(class="masthead-subheading mb-0") #{events[0].subtext}
-    <p class="masthead-subheading mb-0">Last incident was <span id="example" data-toggle="tooltip" data-placement="top"> <b class=text-uppercase><span id="hoursAgoMain">?? </span>h</b> ago</span> at <b class=text-uppercase><span id="lastLocation">Unknown location</span></b> due to <b class=text-uppercase><span id="lastReason">Unspecified Reason</span></b></p>
+    p.masthead-subheading.mb-0 Site is under maintenance 💪 for the weekend. Ignore the data ❤
 
     <!-- Scroll to Events -->
-    <a class="btn btn-outline-light btn-social mx-1 mt-3 js-scroll-trigger" href="#activeEvents">
+    <a class="btn btn-outline-light btn-social mx-1 mt-3 js-scroll-trigger mt-5" href="#Latest">
       <i class="fa fa-chevron-down"></i>
     </a>
 
@@ -138,48 +140,37 @@ block content
             </div>
 
             <div class="accordion" id="events">
-            p.page-section-heading.text-uppercase.text-white Test                   
-            each val, index in currentStatus.stopStatus.l2
+            p.text-uppercase.small This is work in progress                   
+            each val, index1 in events
               .mb-0
                 <div class="card">
                   .card-header(id="heading"+index)
                     .mb-0
                       .row                    
-                        if val.status == "danger"
+                        .col-2
+                          span(class="text-black btn-social mt-1") #{val.timestamp}
+                        .col-10
+                          .row(style="padding-left: 12px")
+                            .col
+                              a.small.alert-light.mx-1 TP
+                              a.small.alert-warning.mx-1 BV
+                              a.small.alert-danger.mx-1 PIM
+                              a.small.alert-danger.mx-1 LYN
+                              a.small.alert-warning.mx-1 PAR
+                              a.small.alert-warning.mx-1 RDU
+                              a.small.alert-light.mx-1 UOT
+                              a.small.alert-light.mx-1 LEE
+                              a.small.alert-light.mx-1 HRD
+                              a.small.alert-light.mx-1 TMB
+                              a.small.alert-light.mx-1 STL
+                              a.small.alert-light.mx-1 CYR
+                              a.small.alert-light.mx-1 BLA
+                          .row
+                            button(class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse"+index1 aria-expanded="true" aria-controls="collapseOne" style="width:100%")
+                              span(class="text-uppercase text-secondary") #{val.reason.short}
 
-                        else if val.status == "warning"
-           
-                        else if val.status == "info"
-
-                        else if val.status == "success"
-                          .col-2
-                            span(class="text-black btn-social mt-1") 5m
-                          .col-10
-                            .row(style="padding-left: 12px")
-                              .col
-                                a.small.alert-light.mx-1 TP
-                                a.small.alert-warning.mx-1 BV
-                                a.small.alert-danger.mx-1 PIM
-                                a.small.alert-danger.mx-1 LYN
-                                a.small.alert-warning.mx-1 PAR
-                                a.small.alert-warning.mx-1 RDU
-                                a.small.alert-light.mx-1 UOT
-                                a.small.alert-light.mx-1 LEE
-                                a.small.alert-light.mx-1 HRD
-                                a.small.alert-light.mx-1 TMB
-                                a.small.alert-light.mx-1 STL
-                                a.small.alert-light.mx-1 CYR
-                                a.small.alert-light.mx-1 BLA
-                            .row
-                              button(class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse"+index aria-expanded="true" aria-controls="collapseOne" style="width:100%")
-                                span(class="text-uppercase text-secondary") Immobilized Train                                        
-
-                  .collapse(id="collapse"+index aria-labelledby="heading"+index data-parent="#events")
-                    .card-body               
-
-                      each val, index in currentStatus.stopStatus.l2
-                        p 2:00 am: This is test data
-                      
+                  .collapse(id="collapse"+index1 aria-labelledby="heading"+index1 data-parent="#events")
+                    .card-body             
                       div.text-center 
                         span.small Report an update:
 
@@ -189,9 +180,7 @@ block content
     
                         <a class="btn btn-sm btn-light" href="mailto:control.ottawa@gmail.com?subject=Reporting LRT Status&body=Time:%0ALocation:%0AReason:%0A%0A">
                           <i class="far fa-envelope"></i> Email
-                        </a>
-
-          
+                        </a>         
             
                 </div>
 
@@ -288,20 +277,20 @@ block content
             <!-- Current Status per station -->
             <!-- Line 1 -->
             .accordion(id="stations")
-              p.page-section-heading.text-center.text-uppercase.text-white Line 1                    
+              p.page-section-heading.text-center.text-uppercase.text-white Line 1   
               each val, index in currentStatus.stopStatus.l1
                 .mb-0.text-center
                   .form-group("titleBlock")
                     p.lead
+              
                       if val.status == "danger"
-                        <button class="btn btn-danger"><i class="fas fa-fire"></i> #{index}</button>
+                        button.btn.btn-danger(type="button" data-toggle="collapse" data-target="#stationDetails"+index) <i class="fas fa-fire"></i> #{index}
                       else if val.status == "warning"
-                        <button class="btn btn-warning"><i class="fas fa-exclamation"></i> #{index}</button>
+                        button.btn.btn-warning(type="button" data-toggle="collapse" data-target="#stationDetails"+index) <i class="fas fa-exclamation"></i> #{index}
                       else if val.status == "info"
-                        <button class="btn btn-info"><i class="fas fa-exclamation-circle"></i> #{index}</button>
+                        button.btn.btn-info(type="button" data-toggle="collapse" data-target="#stationDetails"+index) <i class="fas fa-exclamation-circle"></i> #{index}
                       else if val.status == "success"
                         button.btn.btn-success(type="button" data-toggle="collapse" data-target="#stationDetails"+index) #{index}
-                      </span>
 
                       .collapse(id="stationDetails"+index data-parent="#stations")
                           p #{val.tooltipText}
@@ -340,6 +329,50 @@ block content
       </div>
     </section>
 
+    section.page-section(id="News")
+      .container.mb-5
+        .row
+          .col-md-6
+            .row.mb-5
+              .col 
+                h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-5 News
+                ul
+                    li  RTG asleep on the job as train fails at 2am. OcTranspo to source methamphetamines from Lowertown
+                    li  Bus days away from retirement slain on Ottawa streets
+                    li  Mayor to start the first Ottawa battle royale with 2 million dollar bounty
+                    li  Councilor tells civil transit commission to basically stfu
+                    li  OC does not consider quickly hidden dead trains a issue
+                    li  Train signage and announcements still suck
+                    li  Train surprisingly hasn't caught fire. OC vows "change is coming"
+                    li  Slight breezes and sunlight might be the cause of door jams says OC
+            .row.mb-5
+              .col
+                h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-5 Latest transit reviews
+                p 
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                p "I was just at the Lyon stop, train shows up, no standing room at all, announcement says next train not arriving, said fuck it and called an Uber after already paying for my train ticket"<br> - <i>Happy Customer Kenata88</i></p>
+                p.small.text-muted
+                  a(href="https://www.reddit.com/message/compose/?to=JKOttawa&subject=LRT") Submit a review
+
+
+          .col-md-6
+            h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-5 Media Feed
+            p.text-center
+              <a href="https://twitter.com/intent/tweet?button_hashtag=ottLRTAlert&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">#ottLRTAlert</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> or 
+              <a href="https://twitter.com/intent/tweet?button_hashtag=OccasionalTransport&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">#OccasionalTransport</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            p.text-center and mention 
+              b @OccTranspo 
+              | to be featured
+            
+            <a class="twitter-timeline" data-height="100%" href="https://twitter.com/occtranspo?ref_src=twsrc%5Etfw"></a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
     <!-- Stats Section -->
     <section class="page-section portfolio" id="Statistics">
       <div class="container">
@@ -370,7 +403,7 @@ block content
                 </div>
               </div>
               p DAYS WITHOUT INCIDENT STREAK
-              p -25 DAYS
+              p -26 DAYS
        
             </div>
           </div>
@@ -771,39 +804,42 @@ block content
     <script src="js/freelancer.min.js"></script>
     
     script.
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-      })
       function x() {
 
-        var minutes = 1000 * 60;
-        var hours = minutes * 60;
-        var days = hours * 24;
-        var years = days * 365;
-
         // Params
-        var od = new Date(#{currentStatus.lastFailureClockTime});
+        var od = #{currentStatus.lastFailureClockTime};
 
-        document.getElementById('lastLocation').innerHTML = "#{events[0].location.text}";
-        document.getElementById('lastReason').innerHTML = "#{events[0].reason.short}";
-      
         var nd = new Date();
         var nt = nd.getTime();
-
-        var dys = (nt-od) / days;
-        dys = dys.toFixed(2)
-        var hrs = (nt-od) / hours;
-        hrs = hrs.toFixed(1)
 
         var optionsd = { weekday: 'long', month: 'long', day: 'numeric'};
         var optionst = { timeStyle: 'short', hour12: true };
 
-        $('#example').tooltip({
-          title: (od.toLocaleDateString('en-CA', optionsd) + " at " + od.toLocaleTimeString(optionst))
-        })
-
-        document.getElementById('hoursAgo').innerHTML = hrs
-        document.getElementById('hoursAgoMain').innerHTML = hrs        
+        // Top Nav Bar hours
+        document.getElementById('hoursAgo').innerHTML = hAgo(od)   
 
       } x();
+
+      function pCurStat() {
+
+      }
+
+      function msAgo(timestampMs) {
+        var nd = new Date();
+        var nt = nd.getTime();
+        return nt-timestampMs;
+      }
+
+      function mAgo(timestampMs) {
+        var minutes = 1000 * 60;      
+        let minutesAgo = msAgo(timestampMs)/minutes;
+        return minutesAgo.toFixed(2)
+
+      }
+
+      function hAgo(timestampMs) {
+        let hoursAgo = mAgo(timestampMs)/60;
+        return hoursAgo.toFixed(1)
+      }
+    
 

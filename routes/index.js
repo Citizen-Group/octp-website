@@ -59,7 +59,7 @@ router.post("/admin", function(req, res, next) {
     // Use the new time, except if same or success
     let lastUpdated = ""
 
-    if (file.currentStatus.stopStatus.l1[stopName].status != req.body["overallStatus_" + stopName]) {
+    if (req.body["overallStatus_" + stopName] == "success") {
       // Different
       lastUpdated = nowTime;
     } else {
@@ -67,11 +67,21 @@ router.post("/admin", function(req, res, next) {
       lastUpdated = file.currentStatus.stopStatus.l1[stopName].lastupdated;
     }
 
-    return {
+    let rtn = {
       "status": req.body["overallStatus_" + stopName],
       "tooltipText": req.body["tooltipText_" + stopName],
-      "lastupdated": lastUpdated
+      "lastupdated": lastUpdated,
+      "activeEvents": file.currentStatus.stopStatus.l1[stopName].activeEvents
     };
+
+    rtn.activeEvents.unshift({
+        "timestamp": incidentTime,
+        "severity": req.body["overallStatus_" + stopName],
+        "title": req.body.subText,
+        "details": req.body.reason_long
+    });
+
+    return rtn;
   }  
 
  file.currentStatus.stopStatus = {
@@ -118,6 +128,7 @@ router.post("/admin", function(req, res, next) {
     "timestamp": incidentTime,
     "severity": req.body.overallStatus,
     "durLeaveUpMin": req.body.durLeaveUpMin,
+    "active": true,
     "subtext": req.body.subText,
     "location": {
       "text": req.body.location,
