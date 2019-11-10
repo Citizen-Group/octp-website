@@ -1,13 +1,13 @@
 {
   "currentStatus": {
     "lastFailureClockTime": 1573000459697,
-    "overallStatus": "warning",
+    "overallStatus": "success",
     "stopStatus": {
       "l1": {
         "Tunneys_Pasture": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573000459697,
+          "lastupdated": 1573249729928,
           "activeEvents": [
             {
               "timestamp": "1573402980464",
@@ -32,101 +32,796 @@
         "Bayview": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573002142367
+          "lastupdated": 1573249729928
         },
         "Pimisi": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573002142367
+          "lastupdated": 1573249729928
         },
         "Lyon": {
-          "status": "danger",
+          "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573402997355
+          "lastupdated": 1573249729928
         },
         "Parliament": {
-          "status": "danger",
+          "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573402997355
+          "lastupdated": 1573249729928
         },
         "Rideau": {
-          "status": "danger",
+          "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573402997355
+          "lastupdated": 1573249729928
         },
         "uOttawa": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573000459697
+          "lastupdated": 1573249729928
         },
         "Lees": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573000459697
+          "lastupdated": 1573249729928
         },
         "Hurdman": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573000459697
+          "lastupdated": 1573249729928
         },
         "Tremblay": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573000459697
+          "lastupdated": 1573249729928
         },
         "St_Laurent": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573000459697
+          "lastupdated": 1573249729928
         },
         "Cyrville": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573000459697
+          "lastupdated": 1573249729928
         },
         "Blair": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573000459697
+          "lastupdated": 1573249729928
         }
       },
       "l2": {
         "Carling": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573402997355
+          "lastupdated": 1573307867747
         },
         "Carleton": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573402997355
+          "lastupdated": 1573307867747
         },
         "Confederation": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573402997355
+          "lastupdated": 1573307867747
         },
         "Greenboro": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573402997355
+          "lastupdated": 1573307867747
         }
       }
     }
   },
   "events": [
     {
-      "timestamp": "1573402980464",
+      "timestamp": "1573307762613",
+      "severity": "success",
+      "durLeaveUpMin": "60",
+      "subtext": "Train disabled",
+      "location": {
+        "text": "Parliament",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Disabled train is disabled",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573249709509",
+      "severity": "success",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573249450613",
+      "severity": "danger",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "Across the line",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "info",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Doors and delays",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573249401744",
+      "severity": "danger",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "Across the line",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "info",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "",
+        "long": "Doors and delays"
+      }
+    },
+    {
+      "timestamp": "1573249350205",
+      "severity": "danger",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "Across the line",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "info",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "",
+        "long": "Doors and delays"
+      }
+    },
+    {
+      "timestamp": "1573249271570",
+      "severity": "danger",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "Across the line",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "info",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Doors and delays",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573249236775",
+      "severity": "success",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573249167729",
+      "severity": "danger",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "Across the line",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Doors and Delays ",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573248070596",
       "severity": "warning",
       "durLeaveUpMin": "5",
-      "active": true,
-      "subtext": "dddddddddd",
+      "subtext": "Updated: Reports of door issues at pimsis",
       "location": {
-        "text": "ssssssss",
+        "text": "Across the line",
         "affectedStops": {
           "l1": {
             "Tunneys_Pasture": {
-              "status": "success",
+              "status": "danger",
               "tooltipText": ""
             },
             "Bayview": {
@@ -134,47 +829,47 @@
               "tooltipText": ""
             },
             "Pimisi": {
-              "status": "success",
+              "status": "danger",
               "tooltipText": ""
             },
             "Lyon": {
-              "status": "danger",
+              "status": "warning",
               "tooltipText": ""
             },
             "Parliament": {
-              "status": "danger",
+              "status": "warning",
               "tooltipText": ""
             },
             "Rideau": {
-              "status": "danger",
+              "status": "warning",
               "tooltipText": ""
             },
             "uOttawa": {
-              "status": "success",
+              "status": "warning",
               "tooltipText": ""
             },
             "Lees": {
-              "status": "success",
+              "status": "warning",
               "tooltipText": ""
             },
             "Hurdman": {
-              "status": "success",
+              "status": "info",
               "tooltipText": ""
             },
             "Tremblay": {
-              "status": "success",
+              "status": "info",
               "tooltipText": ""
             },
             "St_Laurent": {
-              "status": "success",
+              "status": "info",
               "tooltipText": ""
             },
             "Cyrville": {
-              "status": "success",
+              "status": "info",
               "tooltipText": ""
             },
             "Blair": {
-              "status": "success",
+              "status": "info",
               "tooltipText": ""
             }
           },
@@ -199,887 +894,104 @@
         }
       },
       "reason": {
-        "short": "aaaaaaaaa",
-        "long": "gggggggg"
+        "short": "Door and delays",
+        "long": "Door issue caused delay in trains"
       }
     },
     {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "info",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "danger",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "danger",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "danger",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "info",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "danger",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "danger",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "danger",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "info",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "danger",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "danger",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "danger",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "info",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "danger",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "danger",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "danger",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "warning",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "warning",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "warning",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "warning",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "warning",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "warning",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "warning",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "warning",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "warning",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "warning",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572999083784",
-      "severity": "warning",
-      "durLeaveUpMin": "1",
-      "subtext": "22222222222",
-      "location": {
-        "text": "2222222222",
-        "affectedStops": {
-          "l1": {
-            "Tunneys_Pasture": {
-              "status": "success",
-              "tooltipText": "1"
-            },
-            "Bayview": {
-              "status": "warning",
-              "tooltipText": "2"
-            },
-            "Pimisi": {
-              "status": "info",
-              "tooltipText": "3"
-            },
-            "Lyon": {
-              "status": "warning",
-              "tooltipText": "4"
-            },
-            "Parliament": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Rideau": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "uOttawa": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Lees": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Hurdman": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Tremblay": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "St_Laurent": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Cyrville": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Blair": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          },
-          "l2": {
-            "Carling": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Carleton": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Confederation": {
-              "status": "success",
-              "tooltipText": ""
-            },
-            "Greenboro": {
-              "status": "success",
-              "tooltipText": ""
-            }
-          }
-        }
-      },
-      "reason": {
-        "short": "2222222222",
-        "long": "22222222222"
-      }
-    },
-    {
-      "timestamp": "1572902270183",
+      "timestamp": "1573247266853",
       "severity": "warning",
       "durLeaveUpMin": "5",
-      "subText": "The train is fine. The mayor is not",
+      "subtext": "Stalled train at bayview",
       "location": {
-        "text": "aaa",
+        "text": "Bayview",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Stalled train",
+        "long": "Stalled train bayview"
+      }
+    },
+    {
+      "timestamp": "1573221610057",
+      "severity": "success",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "",
         "affectedStops": {
           "l1": {
             "Tunneys_Pasture": {
@@ -1156,8 +1068,1396 @@
         }
       },
       "reason": {
-        "short": "aaa",
-        "long": "aaa"
+        "short": "",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573218542913",
+      "severity": "danger",
+      "durLeaveUpMin": "5",
+      "subtext": "Immobilize train at Parliament. Whole line pooched. Buses are now picking up the slack",
+      "location": {
+        "text": "Parliament and Rideau",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "info",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "immobilized train",
+        "long": "immobilized train between Parliament and Rideau"
+      }
+    },
+    {
+      "timestamp": "1573217979695",
+      "severity": "danger",
+      "durLeaveUpMin": "15",
+      "subtext": "Immobilize train at Parliament. Buses are now picking up the slack",
+      "location": {
+        "text": "Parliament and Rideau",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "info",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "immobilized tain",
+        "long": "immobilize train at parliament and Rideau"
+      }
+    },
+    {
+      "timestamp": "1573217487312",
+      "severity": "info",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "warning",
+              "tooltipText": "Immobilized Train"
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573217426326",
+      "severity": "danger",
+      "durLeaveUpMin": "12",
+      "subtext": "Poor Choo Choo. Doors are open at most stations.",
+      "location": {
+        "text": "Parliament and Rideau",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "info",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "immobilized train",
+        "long": "immobilized train"
+      }
+    },
+    {
+      "timestamp": "1573216638625",
+      "severity": "warning",
+      "durLeaveUpMin": "5",
+      "subtext": "Immobilized train",
+      "location": {
+        "text": "Between Parliament and Rideau",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "danger",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "immobilized train",
+        "long": "immobilized train between Parliament and Rideau"
+      }
+    },
+    {
+      "timestamp": "1573216401898",
+      "severity": "warning",
+      "durLeaveUpMin": "5",
+      "subtext": "Delay",
+      "location": {
+        "text": "Hurdman",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "warning",
+              "tooltipText": "Delay reported by user"
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Delay Hurdman",
+        "long": "Delay Hurdman"
+      }
+    },
+    {
+      "timestamp": "1573127814621",
+      "severity": "success",
+      "durLeaveUpMin": "1",
+      "subtext": "",
+      "location": {
+        "text": "",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1573126646293",
+      "severity": "warning",
+      "durLeaveUpMin": "30",
+      "subtext": "",
+      "location": {
+        "text": "General",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "warning",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Coffee has not yet kicked in",
+        "long": "Update 6:35AM: Customers on O-Train Line 1 may experience minor delays due to delay on the morning rush hour launch service. Updates to follow."
+      }
+    },
+    {
+      "timestamp": "1573044811560",
+      "severity": "warning",
+      "durLeaveUpMin": "15",
+      "subtext": "Delay at Blair",
+      "location": {
+        "text": "Blair Station",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "warning",
+              "tooltipText": "Train ahead of Blair (heading west) is having issues."
+            },
+            "Blair": {
+              "status": "warning",
+              "tooltipText": "Train ahead of Blair (heading west) is having issues."
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Train ahead of Blair (heading west) is having issues.",
+        "long": ""
+      }
+    },
+    {
+      "timestamp": "1572958438988",
+      "severity": "warning",
+      "durLeaveUpMin": "15",
+      "subtext": "",
+      "location": {
+        "text": "Blair Station",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Broken Choo Choo",
+        "long": "All passengers reloaded to next train. "
+      }
+    },
+    {
+      "timestamp": "1572958266883",
+      "severity": "warning",
+      "durLeaveUpMin": "5",
+      "subtext": "",
+      "location": {
+        "text": "Blair",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "warning",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Disabled train",
+        "long": "One train is broken down - all passengers being redirected to other platform"
+      }
+    },
+    {
+      "timestamp": "1572908769213",
+      "severity": "warning",
+      "durLeaveUpMin": "2",
+      "subtext": "This is a test of the sub heading text",
+      "location": {
+        "text": "A Test Station",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "info",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "danger",
+              "tooltipText": "Dragons"
+            },
+            "Parliament": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": "Likely on fire"
+            },
+            "Carleton": {
+              "status": "danger",
+              "tooltipText": "down"
+            },
+            "Confederation": {
+              "status": "danger",
+              "tooltipText": "down"
+            },
+            "Greenboro": {
+              "status": "danger",
+              "tooltipText": "gone"
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Fireballs",
+        "long": "A test  station was attacked by dragons"
+      }
+    },
+    {
+      "timestamp": "1572904661847",
+      "severity": "info",
+      "durLeaveUpMin": "1",
+      "location": {
+        "text": "THIS IS A TEST",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": "THIS IS A TEST"
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": "THIS IS A TEST"
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": "THIS IS A TEST"
+            },
+            "Lyon": {
+              "status": "warning",
+              "tooltipText": "sss"
+            },
+            "Parliament": {
+              "status": "danger",
+              "tooltipText": "THIS IS A TEST"
+            },
+            "Rideau": {
+              "status": "warning",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "THIS IS A TEST",
+        "long": "THIS IS A TEST"
+      }
+    },
+    {
+      "timestamp": "1572877556698",
+      "severity": "warning",
+      "durLeaveUpMin": "5",
+      "location": {
+        "text": "Blair",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Track issues",
+        "long": "Some issue at blair"
+      }
+    },
+    {
+      "timestamp": "1572877404503",
+      "severity": "warning",
+      "durLeaveUpMin": "5",
+      "location": {
+        "text": "Blair",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "Out of service train on one platform",
+        "long": "One platform is out of service due to a disabled train. Passengers being redirected to other platform."
+      }
+    },
+    {
+      "timestamp": "1572876654460",
+      "severity": "warning",
+      "durLeaveUpMin": "5",
+      "location": {
+        "text": "",
+        "affectedStops": {
+          "l1": {
+            "Tunneys_Pasture": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Bayview": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Pimisi": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lyon": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Parliament": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Rideau": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "uOttawa": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Lees": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Hurdman": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Tremblay": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "St_Laurent": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Cyrville": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Blair": {
+              "status": "warning",
+              "tooltipText": ""
+            }
+          },
+          "l2": {
+            "Carling": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Carleton": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Confederation": {
+              "status": "success",
+              "tooltipText": ""
+            },
+            "Greenboro": {
+              "status": "success",
+              "tooltipText": ""
+            }
+          }
+        }
+      },
+      "reason": {
+        "short": "",
+        "long": ""
       }
     },
     {
