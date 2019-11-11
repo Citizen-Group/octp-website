@@ -63,25 +63,41 @@ block content
             
             <!-- Overall Page Status. Yellow Alert, Red Alert, Low Alert/Info, Green, Site Down -->
             <div id="statusBlock" class="form-group text-center ">
-                <label class="lead" for="statusBlock">Current Status</label><br>
+                <label class="lead" for="statusBlock">Overall Status</label><br>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="overallStatus" id="overallStatus1" value="danger">
-                    <label class="form-check-label btn-danger" for="overallStatus1">Danger</label>
+                    <label class="form-check-label btn-danger" for="overallStatus1">Danger Bad</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="overallStatus" id="overallStatus2" value="warning">
-                    <label class="form-check-label btn-warning" for="overallStatus2">Warning</label>
+                    <label class="form-check-label btn-warning" for="overallStatus2">Warning Bad</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="overallStatus" id="overallStatus3" value="info">
-                    <label class="form-check-label btn-info" for="overallStatus3">Info</label>
+                    <label class="form-check-label btn-info" for="overallStatus3">No Info Bad</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="overallStatus" id="overallStatus4" value="success" checked>
-                    <label class="form-check-label btn-success" for="overallStatus4">Success</label>
-                </div>
-            </div>         
-            
+                    <label class="form-check-label btn-success" for="overallStatus4">Mild Problems</label>
+                </div>               
+            </div>
+        .row
+          .col-lg.text-center
+            p This changes the colour of the full site for the event your submitting. 
+            p Base it off the severity of the the event your submitting.
+            p.lead Please do not skip field or use a blank form to reset the site, it will make the site look ugly :)
+
+            button.btn.btn-success(id="doggo" type="button") Set Status to Mild/All Clear
+            script.
+              $('#doggo').on('click', function () {
+                  $.ajax({
+                      url: '/status',
+                      data: {
+                          text: "success"
+                      },
+                      dataType : 'json'
+                  });
+              });
     </section>
     
     <!-- Latest Section -->
@@ -104,17 +120,17 @@ block content
         <div class="row">
           <div class="col-lg ml-auto">
             .form-group.mb-5
-              .label(for="timestamp") When (milliseconds) 
+              .label(for="timestamp") When (Current Time in milliseconds) 
               input(type="text" class="form-control" id="timestamp" name="timestamp" value=new Date().getTime())
-              .label(for="subText") Sub heading frontpage text 
+              .label(for="subText") Funny subheading under event title
               input(type="text" class="form-control" id="subText" name="subText")
-              .label(for="durLeaveUpMin") Duration to leave up on the main page (minutes) 
+              .label(for="durLeaveUpMin") Est of duration till resolved
               input(type="text" class="form-control" id="durLeaveUpMin" name="durLeaveUpMin" value="5")
-              .label(for="location") Affected Location (Human Readable) 
+              .label(for="location") Core Location (at/to/between Station name)
               input(type="text" class="form-control" id="location" name="location")
-              .label(for="reason_short") Reason Short (Human Readable) 
+              .label(for="reason_short") Short reason title for issue
               input(type="text" class="form-control" id="reason_short" name="reason_short")
-              .label(for="reason_long") Reason Long (Human Readable)
+              .label(for="reason_long") Long reason title for issue
               input(type="text" class="form-control" id="reason_long" name="reason_long")
         
             <!-- Icon Divider -->
@@ -126,11 +142,10 @@ block content
               <div class="divider-custom-line"></div>
             </div>
             
-            <h4 class="text-center text-uppercase text-white">Per Station Current Status</h2>
-            p.mb-5 Set the status of the stations effected by this event. They will reset to success after time duration expires. Statuses are stored for data mining and statistics.
+            h4(class="text-center text-uppercase text-white") Per Station Current Status
+            p(class="text-center text-white") Set the status of the stations effected by this event (not the overall status of the line).
+            p(class="text-center text-white mb-5") If only one station is known, put warnings on either side. These will compound in later builds.
 
-            <!-- Current Status per station -->
-                            <!-- Line 2 -->
             p.page-section-heading.text-center.text-uppercase.text-white Line 1                   
             each val, index in currentStatus.stopStatus.l1
               .mb-5
@@ -166,7 +181,7 @@ block content
                     </div>
 
                   .form-group
-                    .label(for="tooltipText") Tooltip Text 
+                    .label(for="tooltipText") Additional information about this stations problem
                     <input type="text" class="form-control" id="tooltipText_#{index}" name="tooltipText_#{index}">
 
             <!-- Line 2 -->
@@ -223,8 +238,7 @@ block content
           <div class="col">
             <h4 class="text-uppercase mb-5">Thank you!</h4>
             <button id="submitbutton" type="submit" class="btn btn-primary">Submit</button>
-          </div>
-
+            
         </div>
       </div>
     </footer>

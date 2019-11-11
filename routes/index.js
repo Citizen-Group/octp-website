@@ -40,6 +40,70 @@ function hAgo(timestampMs) {
 router.get("/", function(req, res, next) {
   let siteData = {};
 
+  function shortname (name) {
+    let temp = ""
+
+    switch (name) {
+      case "Tunneys_Pasture":
+        temp = "TP"
+        break;
+
+      case "Bayview":
+        temp = "BV"
+        break;
+      
+      case "Pimisi":
+        temp = "PIM"
+        break;
+
+      case "Lyon":
+        temp = "LYN"
+        break;
+
+      case "Parliament":
+        temp = "PAR"
+        break;
+
+      case "Rideau":
+        temp = "RDU"
+        break;
+
+      case "uOttawa":
+        temp = "UOT"
+        break;
+
+      case "Lees":
+        temp = "LEE"
+        break;
+
+      case "Hurdman":
+        temp = "HRD"
+        break;
+
+      case "Tremblay":
+        temp = "TMB"
+        break;
+
+      case "St_Laurent":
+        temp = "STL"
+        break;
+
+      case "Cyrville":
+        temp = "CYR"
+        break;
+
+      case "Blair":
+        temp = "BLA"
+        break;
+    
+      default:
+        temp = "ERR"
+        break;
+    }
+
+    return temp;
+  }
+
   // Block and read the site data.
   fs.readFile("public/lrt.json", (err, data) => {
       if (err) throw err;
@@ -59,76 +123,12 @@ router.get("/", function(req, res, next) {
         } else {
           tAgo = tAgo + "m"
         }
+
         siteData.events[index].timestamp = tAgo
 
-        let aStops = siteData.events[index].location.affectedStops.l1;
-
         // Render out the status bars
+        let aStops = siteData.events[index].location.affectedStops.l1;
         let sBlock = ""
-
-        function shortname (name) {
-          let temp = ""
-
-          switch (name) {
-            case "Tunneys_Pasture":
-              temp = "TP"
-              break;
-
-            case "Bayview":
-              temp = "BV"
-              break;
-            
-            case "Pimisi":
-              temp = "PIM"
-              break;
-
-            case "Lyon":
-              temp = "LYN"
-              break;
-
-            case "Parliament":
-              temp = "PAR"
-              break;
-
-            case "Rideau":
-              temp = "RDU"
-              break;
-
-            case "uOttawa":
-              temp = "UOT"
-              break;
-
-            case "Lees":
-              temp = "LEE"
-              break;
-
-            case "Hurdman":
-              temp = "HRD"
-              break;
-
-            case "Tremblay":
-              temp = "TMB"
-              break;
-
-            case "St_Laurent":
-              temp = "STL"
-              break;
-
-            case "Cyrville":
-              temp = "CYR"
-              break;
-
-            case "Blair":
-              temp = "BLA"
-              break;
-          
-            default:
-              temp = "ERR"
-              break;
-          }
-
-          return temp;
-        }
 
         for (var index2 in aStops) {
           if (aStops[index2].status == "success") {
@@ -138,8 +138,18 @@ router.get("/", function(req, res, next) {
           }
         }
 
-      siteData.events[index].statusBlock = sBlock;      
+      siteData.events[index].statusBlock = sBlock;       
     }
+
+    // Render out quick stops (WIP)
+    let curStops = siteData.currentStatus.stopStatus.l1;
+    let qsBlock = "";
+
+    for (var index in curStops) {      
+        qsBlock += '<a class="btn btn-sm btn-outline-' + curStops[index].status + '">' + shortname(index) + '</a> \n ' 
+    }
+
+    siteData.currentStatus.quickStatusBlock = qsBlock;   
 
     res.render("index", siteData);
 
@@ -159,6 +169,10 @@ router.get("/admin", function(req, res, next) {
   }
 });
 
+router.get("/status", function(req, res, next) {
+  expireEvent(); 
+  res.redirect("/");
+});
 
 router.post("/admin", function(req, res, next) {
   let siteData = req.body;
@@ -190,18 +204,20 @@ router.post("/admin", function(req, res, next) {
       "lastupdated": lastUpdated,
       "activeEvents": file.currentStatus.stopStatus.l1[stopName].activeEvents
     };
-
+    
+    /** This would add the event to the "Active status"
     rtn.activeEvents.unshift({
         "timestamp": incidentTime,
         "severity": req.body["overallStatus_" + stopName],
         "title": req.body.subText,
         "details": req.body.reason_long
     });
+    */
 
     return rtn;
-  }  
+  }
 
- file.currentStatus.stopStatus = {
+  file.currentStatus.stopStatus = {
     "l1": {
         "Tunneys_Pasture": chkChanged("Tunneys_Pasture"),
         "Bayview": chkChanged("Bayview"),
@@ -333,8 +349,11 @@ router.post("/admin", function(req, res, next) {
   fs.writeFile(fileName, JSON.stringify(file, null, 2), function (err) {
 
     // Set timer to expire the changes to "good"
-    let milisecondsNum = (req.body.durLeaveUpMin*60)*1000;
-    setTimeout(expireEvent, milisecondsNum);
+    //let milisecondsNum = (req.body.durLeaveUpMin*60)*1000;
+    
+    // Disabled for now. Needs to be part of the "active event new system"
+    // Have it remove added "events from the current active events"
+    // setTimeout(expireEvent, milisecondsNum);
 
   });
 

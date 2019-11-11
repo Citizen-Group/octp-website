@@ -1,127 +1,108 @@
 {
   "currentStatus": {
-    "lastFailureClockTime": 1573000459697,
+    "lastFailureClockTime": 1573376400000,
     "overallStatus": "success",
     "stopStatus": {
       "l1": {
         "Tunneys_Pasture": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928,
-          "activeEvents": [
-            {
-              "timestamp": "1573402980464",
-              "severity": "warning",
-              "title": "This is a test title",
-              "details": "This is test details"
-            },
-            {
-              "timestamp": "1573402980464",
-              "severity": "danger",
-              "title": "This is a test danger title",
-              "details": "This is test fanger details"
-            },
-            {
-              "timestamp": "1573402980464",
-              "severity": "info",
-              "title": "This is a test info title",
-              "details": "This is test info details"
-            }
-          ]
+          "tooltipText": "Last updated by incident 11/5/2019, 7:34:19 PM",
+          "lastupdated": 1573000459697
         },
         "Bayview": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 8:02:22 PM",
+          "lastupdated": 1573002142367
         },
         "Pimisi": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 8:02:22 PM",
+          "lastupdated": 1573002142367
         },
         "Lyon": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 8:02:22 PM",
+          "lastupdated": 1573002142367
         },
         "Parliament": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 8:02:22 PM",
+          "lastupdated": 1573002142367
         },
         "Rideau": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 8:02:22 PM",
+          "lastupdated": 1573002142367
         },
         "uOttawa": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 7:34:19 PM",
+          "lastupdated": 1573000459697
         },
         "Lees": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 7:34:19 PM",
+          "lastupdated": 1573000459697
         },
         "Hurdman": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 7:34:19 PM",
+          "lastupdated": 1573000459697
         },
         "Tremblay": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 7:34:19 PM",
+          "lastupdated": 1573000459697
         },
         "St_Laurent": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 7:34:19 PM",
+          "lastupdated": 1573000459697
         },
         "Cyrville": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 7:34:19 PM",
+          "lastupdated": 1573000459697
         },
         "Blair": {
           "status": "success",
-          "tooltipText": "",
-          "lastupdated": 1573249729928
+          "tooltipText": "Last updated by incident 11/5/2019, 7:34:19 PM",
+          "lastupdated": 1573000459697
         }
       },
       "l2": {
         "Carling": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573307867747
+          "lastupdated": 1573423164347
         },
         "Carleton": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573307867747
+          "lastupdated": 1573423164347
         },
         "Confederation": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573307867747
+          "lastupdated": 1573423164347
         },
         "Greenboro": {
           "status": "success",
           "tooltipText": "",
-          "lastupdated": 1573307867747
+          "lastupdated": 1573423164347
         }
       }
     }
   },
   "events": [
     {
-      "timestamp": "1573307762613",
-      "severity": "success",
-      "durLeaveUpMin": "60",
-      "subtext": "Disabled train is disabled",
+      "timestamp": "1573376400000",
+      "severity": "warning",
+      "durLeaveUpMin": "5",
+      "active": true,
+      "subtext": "Dead train is dead",
       "location": {
-        "text": "Parliament",
+        "text": "",
         "affectedStops": {
           "l1": {
             "Tunneys_Pasture": {
@@ -198,8 +179,8 @@
         }
       },
       "reason": {
-        "short": "Train disabled",
-        "long": "Train disabled at Parliment"
+        "short": "Dead train at parliament",
+        "long": "Dead train at parliament"
       }
     }
   ]

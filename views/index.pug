@@ -57,7 +57,6 @@ block content
 
           <!-- Masthead Heading -->
           <h1 class="masthead-heading text-uppercase mb-0">The LRT is a hot mess right now</h1>
-          small(class="masthead-subheading mb-0") #{events[0].subText}
 
     else if currentStatus.overallStatus == "warning"
       <header class="masthead bg-warning text-white text-center">
@@ -67,8 +66,7 @@ block content
           <img class="masthead-avatar mb-5" src="img/hotmessexpress_warning.png" alt="The Hot Mess Express">
 
           <!-- Masthead Heading -->
-          <h1 class="masthead-heading text-uppercase mb-0">The LRT is struggling with life right now</h1>
-          small(class="masthead-subheading mb-0") #{events[0].subText}
+          <h1 class="masthead-heading text-uppercase mb-0">The LRT is struggling with life right now</h1>          
 
     else
       <header class="masthead bg-secondary text-white text-center">
@@ -90,7 +88,7 @@ block content
     </div>
 
     <!-- Masthead Subheading -->
-    p.masthead-subheading.mb-0 Site is under maintenance 💪 for the weekend. Ignore the data ❤
+    p.masthead-subheading.mb-0 Last incident was #{events[0].timestamp} ago. Reason: #{events[0].reason.short}. 
 
     <!-- Scroll to Events -->
     <a class="btn btn-outline-light btn-social mx-1 mt-3 js-scroll-trigger mt-5" href="#Latest">
@@ -100,36 +98,20 @@ block content
       </div>
     </header>
 
-        <!-- Copyright Section -->
-    <section class="copyright py-4 text-center text-white">
-      <div class="container">
-        small.text-uppercase Quick station status
-        p.mb-3 
-        a.btn.btn-sm.btn-outline-success TP
-        a.btn.btn-sm.btn-outline-success BV
-        a.btn.btn-sm.btn-outline-success PIM
-        a.btn.btn-sm.btn-outline-success LYN
-        a.btn.btn-sm.btn-outline-success PAR
-        a.btn.btn-sm.btn-outline-success RDU
-        a.btn.btn-sm.btn-outline-success UOT
-        a.btn.btn-sm.btn-outline-success LEE
-        a.btn.btn-sm.btn-outline-success HRD
-        a.btn.btn-sm.btn-outline-success TMB
-        a.btn.btn-sm.btn-outline-success STL
-        a.btn.btn-sm.btn-outline-success CYR
-        a.btn.btn-sm.btn-outline-success BLA
-        br
+    <!-- Quick Status Section -->
+    section.copyright.py-4.text-center.text-white
+      .container
+        p.small.text-uppercase.mb-3 Quick station status
+        p.small!= currentStatus.quickStatusBlock
         button.small.btn.btn-link
           a.js-scroll-trigger(href="#Station") Details
-      </div>
-    </section>
 
     section(class="page-section" id="Latest")
       .container
         .row
           .col
-            <!-- activeEvents Section Heading -->
-            h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-5 Latest Status
+            <!-- Active Events Section Heading -->
+            h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-5 Last 5 Events
             <!-- Icon Divider -->
             <div class="divider-custom divider-dark">
               <div class="divider-custom-line"></div>
@@ -138,24 +120,25 @@ block content
               </div>
               <div class="divider-custom-line"></div>
             </div>
-
-            <div class="accordion" id="events">
-            p.text-uppercase.small This is work in progress                   
-            each val, index1 in events
-              .mb-0
-                <div class="card">
-                  .card-header(id="heading"+index)
-                    .mb-0
-                      .row                    
-                        .col-2
-                          span(class="text-black btn-social mt-1") #{val.timestamp}
-                        .col-10
-                          .row(style="padding-left: 12px")
-                            .col
-                              span!= val.statusBlock
-                          .row
-                            button(class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse"+index1 aria-expanded="true" aria-controls="collapseOne" style="width:100%")
-                              span(class="text-uppercase text-secondary") #{val.reason.short}
+            p.text-uppercase.small This is work in progress  
+        .row
+          .col
+            <div class="accordion text-center" id="events">                 
+              each val, index1 in events
+                .mb-0
+                  <div class="card">
+                    .card-header(id="heading"+index)
+                      .mb-0
+                        .row                    
+                          .col-2
+                            span(class="text-black btn-social mt-1") #{val.timestamp}
+                          .col-10
+                            .row(style="padding-left: 12px")
+                              .col
+                                span!= val.statusBlock
+                            .row
+                              button(class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse"+index1 aria-expanded="true" aria-controls="collapseOne" style="width:100%")
+                                span(class="text-uppercase text-secondary") #{val.reason.short}
 
                   .collapse(id="collapse"+index1 aria-labelledby="heading"+index1 data-parent="#events")
                     .card-body             
@@ -176,9 +159,6 @@ block content
                 </div>
 
             </div>
-        .row
-          .col
-            h3.text-center.mt-5(id="complete") Completed Incidents
 
     <!-- Report Section -->
     <section class="page-section" id="Report">
@@ -283,11 +263,9 @@ block content
                       else if val.status == "success"
                         button.btn.btn-success(type="button" data-toggle="collapse" data-target="#stationDetails"+index) #{index}
 
-                      .collapse(id="stationDetails"+index data-parent="#stations")
-                          p Station Status Dropdown coming soon
-                          br
-                          
-                    
+                      .collapse.mb-2(id="stationDetails"+index data-parent="#stations")
+                          p Detailed station status dropdown is coming soon ❤ 
+                          p (Unlike the LRT)            
 
           <div class="col-lg-6">
             <!-- Line 2 -->
@@ -353,7 +331,7 @@ block content
               <a href="https://twitter.com/intent/tweet?button_hashtag=OccasionalTransport&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">#OccasionalTransport</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             p.text-center and mention 
-              b @OccTranspo 
+              a.bold(href="https://twitter.com/OccTranspo?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3Aocctranspo&ref_url=http%3A%2F%2Flocalhost%3A8080%2F") @OccTranspo 
               | to be featured
             
             <a class="twitter-timeline" data-height="100%" href="https://twitter.com/occtranspo?ref_src=twsrc%5Etfw"></a> 
