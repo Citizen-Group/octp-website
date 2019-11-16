@@ -181,9 +181,14 @@ router.post("/admin", function(req, res, next) {
   var file = require("../" + fileName);
 
   // Setting form values
+  if (req.body.overallStatus != "success")
   file.currentStatus.overallStatus = req.body.overallStatus;
+
   let nowTime = Date.now();
   let incidentTime = req.body.timestamp;
+
+  file.currentStatus.lastFailureClockTime = incidentTime;
+  file.currentStatus.overallStatus = req.body.overallStatus;
 
   function chkChanged(stopName) {
 
